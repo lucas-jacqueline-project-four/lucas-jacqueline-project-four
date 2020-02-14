@@ -1,0 +1,21 @@
+PAGE ONE: 
+1. User lands on page 
+2. Page displays "Owlbears & Goblins" <h1> title and <h2>Monster Battle</h2> subtitle, and a <button> to choose a fighter
+
+PAGE TWO:
+3. Upon click of the "Choose a fighter" <button> on page one, User lands on page that displays 6 different monsters to choose from
+4. User can click on a monster <img> to choose their monster
+
+PAGE THREE:
+5. User lands on page that displays: 
+    - their chosen monster
+    - an opponenet monster that was randomly selected from a list of 6 monsters 
+    - the health and battle stats of each monster 
+    - a <button> that lets the User attack 
+6. Once the User attacks: 
+    - the opponent's health updates accordingly 
+    - User attack button greys out, and text displays indicating that the opponent has attacked, as well as the power of the attack 
+7. Continue alternating between User and opponent attack until one of their health reaches 0
+
+PAGE FOUR: 
+8. User lands on page that displays "YOU WIN" or "YOU LOSE" based on results of the battle 
