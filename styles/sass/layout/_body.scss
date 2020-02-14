@@ -1,5 +1,29 @@
 body {
-    background-image: url("assets/owlbear-background.jpg");
+    background-image: url("../assets/owlbear-background.jpg");
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+
+
+}
+.dimmed {
+  position: relative;
+}
+
+.dimmed:after {
+  content: " ";
+  z-index: -1;
+  display: block;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(37, 37, 37, 0.5);
+}
+
+.text-container{
+    display: flex;
+    flex-direction: column;
 }
