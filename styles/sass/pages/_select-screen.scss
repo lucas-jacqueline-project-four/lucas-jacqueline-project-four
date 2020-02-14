@@ -1,9 +1,27 @@
+.gallery {
+    max-width: 1000px;
+    margin: 30px auto 0 auto;
+}
+
 .gallery-container-top,
 .gallery-container-bottom{
     display: flex;
 }
 
 .gallery-flex-box{
-    width:calc((100% / 3) - 20px);
+    width: calc((100% / 3) - 20px);
+    height: 300px;
+    border: 3px solid white;
+    text-align: center;
+    background-color: #D81921;
+    transition: all 0.3s ease;
+}
+
+.gallery-flex-box img {
+    width: 150px;
+}
+
+.gallery-flex-box:hover {
+    transform: scale(1.1);
 }
 
