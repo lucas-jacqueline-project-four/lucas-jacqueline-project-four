@@ -272,10 +272,16 @@ h1 {
   font-size: 6rem;
 }
 
+h2 {
+  margin-top: 30px;
+  font-size: 3.0rem;
+  text-transform: uppercase;
+}
+
 h2,
 p {
   font-family: 'Open Sans', sans-serif;
-  color: #ffffff;
+  color: #ffffb6;
 }
 
 .wrapper {
@@ -316,4 +322,27 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+}
+
+button {
+  background-color: #D81921;
+  color: white;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+a button {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
 }
