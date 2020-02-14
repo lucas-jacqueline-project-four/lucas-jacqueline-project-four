@@ -1,0 +1,9 @@
+.gallery-container-top,
+.gallery-container-bottom{
+    display: flex;
+}
+
+.gallery-flex-box{
+    width:calc((100% / 3) - 20px);
+}
+

@@ -284,6 +284,11 @@ p {
   color: #ffffb6;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
 .wrapper {
   max-width: 1280px;
   margin: 0 auto;
@@ -345,4 +350,15 @@ a button {
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
+}
+
+.gallery-container-top,
+.gallery-container-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.gallery-flex-box {
+  width: calc((100% / 3) - 20px);
 }
