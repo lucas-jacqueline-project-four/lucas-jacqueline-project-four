@@ -339,7 +339,6 @@ body {
 button {
   background-color: #D81921;
   color: white;
-  margin-top: 30px;
   padding: 20px;
   border-radius: 5px;
 }
@@ -349,6 +348,7 @@ a button {
   text-transform: uppercase;
   font-size: 1.5rem;
   font-weight: bold;
+  margin-top: 30px;
   cursor: pointer;
 }
 
