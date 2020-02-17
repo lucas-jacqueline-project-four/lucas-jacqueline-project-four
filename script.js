@@ -108,36 +108,44 @@ myApp.displayMonster = (monster) => {
     const wis = `<li><p> Wisdom: ${monster.wisdom}</p></li>`
     const cha = `<li><p> Charisma: ${monster.charisma}</p></li>`
 
-    $('#stats-1').append(hitPoints, strength, con, dex, int, wis, cha);
+    $('#selectMonsterTitle').text(name);
+
+    $('#gallery').replaceWith(hitPoints, strength, con, dex, int, wis, cha);
 
     //appending that HTML
 
 };
 
 myApp.init = () => {
-    $('body').on('click', '#owlbear', function () {
-        alert("Owlbear clicked!");
+    $('body').on('click', '#owlbear', function() {
+        console.log("Hellooooo?");
+        myApp.getOwlbear()
     });
-    $('#stats-1').on('click', '#goblin', function () {
+    $('body').on('click', '#goblin', function() {
         myApp.getGoblin();
     });
-    $('#stats-1').on('click', '#orc', function () {
+    $('body').on('click', '#orc', function() {
         myApp.getOrc();
     });
 
-    $('#stats-1').on('click', '#sahuagin', function () {
+    $('body').on('click', '#sahuagin', function() {
         myApp.getSahuagin();
     });
 
-    $('#stats-1').on('click', '#troll', function () {
+    $('body').on('click', '#troll', function() {
         myApp.getTroll();
     });
 
-    $('#stats-1').on('click', '#gelatinouscube', function () {
+    $('body').on('click', '#gelatinous-cube', function() {
         myApp.getGelatinousCube();
     });
 }
+
 $(function() {
     myApp.init();
 
+    // $('body').on('click', '#owlbear', function() {
+    //     alert("Owlbear clicked!");
+    //     console.log("Hellooooo?");
+    // });
 });
