@@ -143,9 +143,4 @@ myApp.init = () => {
 
 $(function() {
     myApp.init();
-
-    // $('body').on('click', '#owlbear', function() {
-    //     alert("Owlbear clicked!");
-    //     console.log("Hellooooo?");
-    // });
 });
