@@ -121,7 +121,7 @@ myApp.init = () => {
     $('body').on('click', '#owlbear', function() {
         console.log("Hellooooo?");
         myApp.getOwlbear();
-        $('#monster-img').attr('src', './assets/Owlbear.png');
+        $('#monster-img').attr('src', './assets/Owlbear2.png');
         
     });
     $('body').on('click', '#goblin', function() {
@@ -135,7 +135,7 @@ myApp.init = () => {
 
     $('body').on('click', '#sahuagin', function() {
         myApp.getSahuagin();
-        $('#monster-img').attr('src', './assets/fishman.png');
+        $('#monster-img').attr('src', './assets/fishman2.png');
     });
 
     $('body').on('click', '#troll', function() {
@@ -145,7 +145,7 @@ myApp.init = () => {
 
     $('body').on('click', '#gelatinous-cube', function() {
         myApp.getGelatinousCube();
-        $('#monster-img').attr('src', './assets/cube.png');
+        $('#monster-img').attr('src', './assets/cube2.png');
     });
 }
 
