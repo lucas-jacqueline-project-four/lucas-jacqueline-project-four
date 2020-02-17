@@ -156,3 +156,35 @@ myApp.init = () => {
 $(function() {
     myApp.init();
 });
+
+// On click of selecting monster, randomizer selects random opponent as well 
+
+// image and stats display for both monster and opponent, but opponent does not have an attack button 
+
+// User clicks Attack button
+
+// Strengths
+// Owlbear: 20
+// Goblin: 8
+// Orc: 16
+// Fishman: 13
+// Troll: 18
+// Cube: 14
+
+// HP
+// Owlbear: 59
+// Goblin: 7
+// Orc: 15
+// Fishman: 22
+// Troll: 84
+// Cube: 84
+
+// If Strength > 15, then take off 10HP from opponent
+// If Strength < 15, then take off 5HP from opponent 
+
+// If Opponent Strength > 15, then take off 10HP from User
+// If Opponent Strength < 15, then take off 5HP from User
+
+// If (UserHP === 0) -> page says "You Lose"
+// If (OpponentHP === 0) -> page says "You Win"
+
