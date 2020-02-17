@@ -15,6 +15,9 @@
     text-align: center;
     background-color: #D81921;
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .gallery-flex-box img {
@@ -24,4 +27,3 @@
 .gallery-flex-box:hover {
     transform: scale(1.1);
 }
-
