@@ -4,17 +4,19 @@ const myApp={};
 
 myApp.getOwlbear = () => {
 
-    $.ajax({
-        url:'http://www.dnd5eapi.co/api/monsters/owlbear',
-        method:'GET',
-        dataType:'json',
-        data:{
-            format:'json',
-            q:'goblin'
+    const monsterPromise = $.ajax({
+        url: 'http://proxy.hackeryou.com',
+        dataType: 'json',
+        method: 'GET',
+        data: {
+            reqUrl: `http://dnd5eapi.co/api/monsters/owlbear`,
         }
-        }).then(function(result){
-            console.log('any monsters here?',result)
-    })
+    }).then((data) => {
+        console.log(data);
+        // return data;
+        myApp.displayMonster(data);
+    });
+    return monsterPromise
 }
 
 myApp.displayMonster = (monster) => {
@@ -26,21 +28,21 @@ myApp.displayMonster = (monster) => {
     const int = `<li><p> Intelligence: ${monster.intelligence}</p></li>`
     const wis = `<li><p> Wisdom: ${monster.wisdom}</p></li>`
     const cha = `<li><p> Charisma: ${monster.charisma}</p></li>`
-    $('.monster').append(hitPoints, strength, con, dex, int, wis, cha);
+    $('#stats-1').append(hitPoints, strength, con, dex, int, wis, cha);
 
     //appending that HTML
+ 
 };
 
 myApp.init = () => {
-    
+    myApp.getOwlbear();
 }
 
 $(function() {
     myApp.init();
-
-    $('#stats-1').on('click', '#owlbear', function(){
-        myApp.getOwlbear();
-        myApp.displayMonster();
-        console.log("Are we working?");
+$('#stats-1').on('click', '#owlbear', function(){
+    myApp.displayMonster();
+    console.log("Are we working?");
     });
+
 });
