@@ -110,23 +110,35 @@ myApp.displayMonster = (monster) => {
     $('#stats-1').append(hitPoints, strength, con, dex, int, wis, cha);
 
     //appending that HTML
- 
+
 };
 
 myApp.init = () => {
-    myApp.getOwlbear();
-    myApp.getGoblin();
-    myApp.getOrc();
-    myApp.getSahuagin();
-    myApp.getTroll();
-    myApp.getGelatinousCube();
-}
 
+    $('#stats-1').on('click', '#owlbear', function () {
+        myApp.getOwlbear();
+        myApp.displayMonster();
+    });
+    $('#stats-1').on('click', '#goblin', function () {
+        myApp.getGoblin();
+    });
+    $('#stats-1').on('click', '#orc', function () {
+        myApp.getOrc();
+    });
+
+    $('#stats-1').on('click', '#sahuagin', function () {
+        myApp.getSahuagin();
+    });
+
+    $('#stats-1').on('click', '#troll', function () {
+        myApp.getTroll();
+    });
+
+    $('#stats-1').on('click', '#gelatinouscube', function () {
+        myApp.getGelatinousCube();
+    });
+}
 $(function() {
     myApp.init();
-$('#stats-1').on('click', '#owlbear', function(){
-    myApp.displayMonster();
-    console.log("Are we working?");
-    });
 
 });
