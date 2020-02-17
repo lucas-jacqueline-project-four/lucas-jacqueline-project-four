@@ -29,7 +29,7 @@ myApp.getGoblin = () => {
     }).then((data) => {
         console.log(data);
         // return data;
-        myApp.displayMonster(data);
+        myApp.displayMonster();
     });
     return monsterPromise
 }
@@ -115,10 +115,11 @@ myApp.displayMonster = (monster) => {
 };
 
 myApp.init = () => {
-    $('body').on('click', '#owlbear', function () {
-        alert("Owlbear clicked!");
+    $('#owlbear').on('click', function () {
+        alert("henlo")
+        myApp.getOwlbear();
     });
-    $('#stats-1').on('click', '#goblin', function () {
+    $('#stats-1').on('click', '.goblin', function () {
         myApp.getGoblin();
     });
     $('#stats-1').on('click', '#orc', function () {
@@ -137,6 +138,7 @@ myApp.init = () => {
         myApp.getGelatinousCube();
     });
 }
+
 $(function() {
     myApp.init();
 
