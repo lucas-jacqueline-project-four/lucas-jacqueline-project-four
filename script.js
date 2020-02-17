@@ -107,6 +107,7 @@ myApp.displayMonster = (monster) => {
     const int = `<li><p> Intelligence: ${monster.intelligence}</p></li>`
     const wis = `<li><p> Wisdom: ${monster.wisdom}</p></li>`
     const cha = `<li><p> Charisma: ${monster.charisma}</p></li>`
+
     $('#stats-1').append(hitPoints, strength, con, dex, int, wis, cha);
 
     //appending that HTML
@@ -114,10 +115,8 @@ myApp.displayMonster = (monster) => {
 };
 
 myApp.init = () => {
-
-    $('#stats-1').on('click', '#owlbear', function () {
-        myApp.getOwlbear();
-        myApp.displayMonster();
+    $('body').on('click', '#owlbear', function () {
+        alert("Owlbear clicked!");
     });
     $('#stats-1').on('click', '#goblin', function () {
         myApp.getGoblin();
