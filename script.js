@@ -121,26 +121,31 @@ myApp.init = () => {
     $('body').on('click', '#owlbear', function() {
         console.log("Hellooooo?");
         myApp.getOwlbear();
-        $('#monster-img').attr('src', './assets/Owlbear.png')
+        $('#monster-img').attr('src', './assets/Owlbear.png');
         
     });
     $('body').on('click', '#goblin', function() {
         myApp.getGoblin();
+        $('#monster-img').attr('src', './assets/gobbo.png');
     });
     $('body').on('click', '#orc', function() {
         myApp.getOrc();
+        $('#monster-img').attr('src', './assets/orc.png');
     });
 
     $('body').on('click', '#sahuagin', function() {
         myApp.getSahuagin();
+        $('#monster-img').attr('src', './assets/fishman.png');
     });
 
     $('body').on('click', '#troll', function() {
         myApp.getTroll();
+        $('#monster-img').attr('src', './assets/O-Mad-Troll-Monster-620-Wide-with-margins.png');
     });
 
     $('body').on('click', '#gelatinous-cube', function() {
         myApp.getGelatinousCube();
+        $('#monster-img').attr('src', './assets/cube.png');
     });
 }
 
