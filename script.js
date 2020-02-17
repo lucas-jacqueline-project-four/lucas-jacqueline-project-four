@@ -99,7 +99,7 @@ myApp.getGelatinousCube = () => {
 }
 
 myApp.displayMonster = (monster) => {
-    $('.name1').html(monster.name);
+    // $('.name1').html(monster.name);
     const hitPoints = `<li><p> Hit Points: ${monster.hit_points}</p></li>`
     const strength = `<li><p> Strength: ${monster.strength}</p></li>`
     const con = `<li><p> Constitution: ${monster.constitution}</p></li>`
@@ -108,10 +108,11 @@ myApp.displayMonster = (monster) => {
     const wis = `<li><p> Wisdom: ${monster.wisdom}</p></li>`
     const cha = `<li><p> Charisma: ${monster.charisma}</p></li>`
 
-    $('#selectMonsterTitle').text(name);
+    $('#select-monster-title').text(monster.name);
 
     $('#gallery').replaceWith(hitPoints, strength, con, dex, int, wis, cha);
 
+    
     //appending that HTML
 
 };
@@ -119,7 +120,9 @@ myApp.displayMonster = (monster) => {
 myApp.init = () => {
     $('body').on('click', '#owlbear', function() {
         console.log("Hellooooo?");
-        myApp.getOwlbear()
+        myApp.getOwlbear();
+        $('#monster-img').attr('src', './assets/Owlbear.png')
+        
     });
     $('body').on('click', '#goblin', function() {
         myApp.getGoblin();
