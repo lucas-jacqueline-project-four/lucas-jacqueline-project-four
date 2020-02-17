@@ -112,12 +112,16 @@ myApp.displayMonster = (monster) => {
 
     $('#gallery').replaceWith(hitPoints, strength, con, dex, int, wis, cha);
 
-    
+    // $('.attack-box').append(<button>'Attack'</button>)
     //appending that HTML
 
 };
 
 myApp.init = () => {
+    $('body').on('click','.monster', function(){
+        $('.attack-box').append('<button>ATTACK!!!!</button>')
+    })
+
     $('body').on('click', '#owlbear', function() {
         console.log("Hellooooo?");
         myApp.getOwlbear();
