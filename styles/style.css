@@ -366,7 +366,7 @@ a button {
 
 .gallery-flex-box {
   width: calc((100% / 3) - 20px);
-  height: 300px;
+  height: 250px;
   border: 3px solid white;
   text-align: center;
   background-color: #D81921;
@@ -393,6 +393,29 @@ a button {
           transform: scale(1.1);
 }
 
+.attack-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.monster {
+  padding: 0;
+}
+
 .monster-box {
   width: 50%;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+li p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 1.6;
 }

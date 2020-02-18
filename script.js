@@ -126,13 +126,8 @@ myApp.getRandomMonster = () => {
 
 
 myApp.init = () => {
-    $('body').on('click','.monster', function(){
-        $('.attack-box').append('<button>ATTACK!!!!</button>');
-        myApp.getRandomMonster();
-    })
 
     $('body').on('click', '#owlbear', function() {
-        console.log("Hellooooo?");
         myApp.getOwlbear();
         $('#monster-img').attr('src', './assets/Owlbear2.png');
         
@@ -160,6 +155,11 @@ myApp.init = () => {
         myApp.getGelatinousCube();
         $('#monster-img').attr('src', './assets/cube2.png');
     });
+    $('body').on('click', '.monster', function () {
+        $('.attack-box').append('<button>ATTACK!!!!</button>');
+        myApp.getRandomMonster();
+    })
+
 }
 
 $(function() {
