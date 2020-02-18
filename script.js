@@ -114,16 +114,21 @@ myApp.displayMonster = (monster) => {
 };
 
 
-const listOfRandomOpponents = [myApp.getOwlbear, my.App.getGoblin, myApp.getOrc];
-myApp.getRandomMonster = (listOfRandomOpponents) => {
-    const random = Math.floor(Math.random() * 6);
 
-    myApp.displayMonster();
+
+myApp.getRandomMonster = () => {
+    const listOfRandomOpponents = [myApp.getOwlbear, myApp.getGoblin, myApp.getOrc];
+    const random = Math.floor(Math.random() * 3);
+    listOfRandomOpponents[random];
+    // myApp.displayMonster();
+    console.log(listOfRandomOpponents[random])
 }
+
 
 myApp.init = () => {
     $('body').on('click','.monster', function(){
-        $('.attack-box').append('<button>ATTACK!!!!</button>')
+        $('.attack-box').append('<button>ATTACK!!!!</button>');
+        myApp.getRandomMonster();
     })
 
     $('body').on('click', '#owlbear', function() {
