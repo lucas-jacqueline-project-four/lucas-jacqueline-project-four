@@ -109,7 +109,9 @@ myApp.displayMonster = (monster) => {
 
     $('#select-monster-title').text(monster.name);
 
-    $('#gallery').replaceWith(hitPoints, strength, con, dex, int, wis, cha);
+    $('#gallery').hide();
+    $('#gallery-container-all').replaceWith(hitPoints, strength, con, dex, int, wis, cha);
+    // figure out a way to get our stats both showing properly
 };
 
 myApp.displayEnemy = (monster) => {
