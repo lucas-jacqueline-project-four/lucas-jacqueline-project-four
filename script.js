@@ -164,7 +164,7 @@ $(function() {
 // User clicks Attack button
 
 // Strengths
-// Owlbear: 20
+// Owlbear: 20 
 // Goblin: 8
 // Orc: 16
 // Fishman: 13
@@ -173,11 +173,14 @@ $(function() {
 
 // HP
 // Owlbear: 59
-// Goblin: 7
-// Orc: 15
-// Fishman: 22
+// Goblin: 7 to balance , maybe set this 40
+// Orc: 15 possibly set to 50
+// Fishman: 22 possibly set to 60
 // Troll: 84
 // Cube: 84
+
+//instead of the stats ul, the HP can be an h3 placed beside the stats list. 
+//attack button will be placed at the center of the screen to attract user to click.
 
 // If Strength > 15, then take off 10HP from opponent
 // If Strength < 15, then take off 5HP from opponent 
@@ -187,4 +190,8 @@ $(function() {
 
 // If (UserHP === 0) -> page says "You Lose"
 // If (OpponentHP === 0) -> page says "You Win"
+
+//MVP for now, have the attacks of user and opponent happen at the same time
+
+//have a to-hit modifier. Attack === 0-1 = miss. attack === 2-9 = hit.
 

@@ -392,3 +392,7 @@ a button {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
+
+.monster-box {
+  width: 50%;
+}
