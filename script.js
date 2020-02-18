@@ -111,20 +111,15 @@ myApp.displayMonster = (monster) => {
     $('#select-monster-title').text(monster.name);
 
     $('#gallery').replaceWith(hitPoints, strength, con, dex, int, wis, cha);
-
-    // $('.attack-box').append(<button>'Attack'</button>)
-    //appending that HTML
-
 };
 
-const random = Math.floor(Math.random() * 6);
 
-const getRandomOpponent = function(){
-    displayMonster(random);
+const listOfRandomOpponents = [myApp.getOwlbear, my.App.getGoblin, myApp.getOrc];
+myApp.getRandomMonster = (listOfRandomOpponents) => {
+    const random = Math.floor(Math.random() * 6);
 
+    myApp.displayMonster();
 }
-console.log(getRandomOpponent)
-
 
 myApp.init = () => {
     $('body').on('click','.monster', function(){
