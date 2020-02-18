@@ -32,12 +32,27 @@
     display:flex;
     justify-content: center;
 }
+
+.battle-container {
+    display: flex;
+}
+
 .monster{
     padding:0;
 }
 
 .monster-box{
     width: 50%;
+}
+
+.heading-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.monster-enemy-container {
+    display: flex;
+    justify-content: space-between;
 }
 
 

@@ -99,7 +99,6 @@ myApp.getGelatinousCube = () => {
 }
 
 myApp.displayMonster = (monster) => {
-    // $('.name1').html(monster.name);
     const hitPoints = `<li><p> Hit Points: ${monster.hit_points}</p></li>`
     const strength = `<li><p> Strength: ${monster.strength}</p></li>`
     const con = `<li><p> Constitution: ${monster.constitution}</p></li>`
@@ -114,7 +113,6 @@ myApp.displayMonster = (monster) => {
 };
 
 myApp.displayEnemy = (monster) => {
-    // $('.name1').html(monster.name);
     const hitPoints = `<li><p> Hit Points: ${monster.hit_points}</p></li>`
     const strength = `<li><p> Strength: ${monster.strength}</p></li>`
     const con = `<li><p> Constitution: ${monster.constitution}</p></li>`
@@ -123,9 +121,9 @@ myApp.displayEnemy = (monster) => {
     const wis = `<li><p> Wisdom: ${monster.wisdom}</p></li>`
     const cha = `<li><p> Charisma: ${monster.charisma}</p></li>`
 
-    $('#select-monster-title').text(monster.name);
+    $('#enemy-monster-title').text(monster.name);
 
-    $('#gallery').replaceWith(hitPoints, strength, con, dex, int, wis, cha);
+    $('#enemy-stat-box').replaceWith(hitPoints, strength, con, dex, int, wis, cha);
 };
 
 
@@ -145,6 +143,7 @@ myApp.getRandomMonster = () => {
             console.log(data);
             // return data;
             myApp.displayEnemy(data);
+            $('#enemy-img').attr('src', './assets/gobbo.png');
         });
         return monsterPromise
         
@@ -160,6 +159,7 @@ myApp.getRandomMonster = () => {
             console.log(data);
             // return data;
             myApp.displayEnemy(data);
+            $('#enemy-img').attr('src', './assets/Owlbear2.png');
         });
         return monsterPromise
     } else if (listOfRandomOpponents[random] === 'orc') {
@@ -174,6 +174,7 @@ myApp.getRandomMonster = () => {
             console.log(data);
             // return data;
             myApp.displayEnemy(data);
+            $('#enemy-img').attr('src', './assets/orc.png');
         });
         return monsterPromise
         
@@ -189,6 +190,7 @@ myApp.getRandomMonster = () => {
             console.log(data);
             // return data;
             myApp.displayEnemy(data);
+            $('#enemy-img').attr('src', './assets/O-Mad-Troll-Monster-620-Wide-with-margins.png');
         });
         return monsterPromise
     } else if (listOfRandomOpponents[random] === 'sahuagin') {
@@ -203,6 +205,7 @@ myApp.getRandomMonster = () => {
             console.log(data);
             // return data;
             myApp.displayEnemy(data);
+            $('#enemy-img').attr('src', './assets/fishman2.png');
         });
         return monsterPromise
         
@@ -218,6 +221,7 @@ myApp.getRandomMonster = () => {
             console.log(data);
             // return data;
             myApp.displayEnemy(data);
+            $('#enemy-img').attr('src', './assets/cube2.png');
         });
         return monsterPromise
     }
@@ -230,7 +234,6 @@ myApp.init = () => {
     $('body').on('click', '#owlbear', function() {
         myApp.getOwlbear();
         $('#monster-img').attr('src', './assets/Owlbear2.png');
-        
     });
     $('body').on('click', '#goblin', function() {
         myApp.getGoblin();
