@@ -93,7 +93,7 @@ myApp.getGelatinousCube = () => {
     }).then((data) => {
         console.log(data);
         // return data;
-        myApp.displayMonster(data);
+        myApp.displayMonster(data);;
     });
     return monsterPromise
 }
@@ -113,15 +113,115 @@ myApp.displayMonster = (monster) => {
     $('#gallery').replaceWith(hitPoints, strength, con, dex, int, wis, cha);
 };
 
+myApp.displayEnemy = (monster) => {
+    // $('.name1').html(monster.name);
+    const hitPoints = `<li><p> Hit Points: ${monster.hit_points}</p></li>`
+    const strength = `<li><p> Strength: ${monster.strength}</p></li>`
+    const con = `<li><p> Constitution: ${monster.constitution}</p></li>`
+    const dex = `<li><p> Dexterity: ${monster.dexterity}</p></li>`
+    const int = `<li><p> Intelligence: ${monster.intelligence}</p></li>`
+    const wis = `<li><p> Wisdom: ${monster.wisdom}</p></li>`
+    const cha = `<li><p> Charisma: ${monster.charisma}</p></li>`
 
+    $('#select-monster-title').text(monster.name);
+
+    $('#gallery').replaceWith(hitPoints, strength, con, dex, int, wis, cha);
+};
 
 
 myApp.getRandomMonster = () => {
-    const listOfRandomOpponents = [myApp.getOwlbear, myApp.getGoblin, myApp.getOrc];
-    const random = Math.floor(Math.random() * 3);
-    listOfRandomOpponents[random];
+    const listOfRandomOpponents = ['goblin', 'owlbear', 'orc', 'troll', 'sahuagin', 'gelatinous cube'];
+    const random = Math.floor(Math.random() * listOfRandomOpponents.length);
+    
+    if (listOfRandomOpponents[random] === 'goblin') {
+        const monsterPromise = $.ajax({
+            url: 'http://proxy.hackeryou.com',
+            dataType: 'json',
+            method: 'GET',
+            data: {
+                reqUrl: `http://dnd5eapi.co/api/monsters/goblin`,
+            }
+        }).then((data) => {
+            console.log(data);
+            // return data;
+            myApp.displayEnemy(data);
+        });
+        return monsterPromise
+        
+    } else if (listOfRandomOpponents[random] === 'owlbear') {
+        const monsterPromise = $.ajax({
+            url: 'http://proxy.hackeryou.com',
+            dataType: 'json',
+            method: 'GET',
+            data: {
+                reqUrl: `http://dnd5eapi.co/api/monsters/owlbear`,
+            }
+        }).then((data) => {
+            console.log(data);
+            // return data;
+            myApp.displayEnemy(data);
+        });
+        return monsterPromise
+    } else if (listOfRandomOpponents[random] === 'orc') {
+        const monsterPromise = $.ajax({
+            url: 'http://proxy.hackeryou.com',
+            dataType: 'json',
+            method: 'GET',
+            data: {
+                reqUrl: `http://dnd5eapi.co/api/monsters/orc`,
+            }
+        }).then((data) => {
+            console.log(data);
+            // return data;
+            myApp.displayEnemy(data);
+        });
+        return monsterPromise
+        
+    } else if (listOfRandomOpponents[random] === 'troll') {
+        const monsterPromise = $.ajax({
+            url: 'http://proxy.hackeryou.com',
+            dataType: 'json',
+            method: 'GET',
+            data: {
+                reqUrl: `http://dnd5eapi.co/api/monsters/troll`,
+            }
+        }).then((data) => {
+            console.log(data);
+            // return data;
+            myApp.displayEnemy(data);
+        });
+        return monsterPromise
+    } else if (listOfRandomOpponents[random] === 'sahuagin') {
+        const monsterPromise = $.ajax({
+            url: 'http://proxy.hackeryou.com',
+            dataType: 'json',
+            method: 'GET',
+            data: {
+                reqUrl: `http://dnd5eapi.co/api/monsters/sahuagin`,
+            }
+        }).then((data) => {
+            console.log(data);
+            // return data;
+            myApp.displayEnemy(data);
+        });
+        return monsterPromise
+        
+    } else if (listOfRandomOpponents[random] === 'gelatinous cube') {
+        const monsterPromise = $.ajax({
+            url: 'http://proxy.hackeryou.com',
+            dataType: 'json',
+            method: 'GET',
+            data: {
+                reqUrl: `http://dnd5eapi.co/api/monsters/gelatinous-cube`,
+            }
+        }).then((data) => {
+            console.log(data);
+            // return data;
+            myApp.displayEnemy(data);
+        });
+        return monsterPromise
+    }
     // myApp.displayMonster();
-    console.log(listOfRandomOpponents[random])
 }
 
 
