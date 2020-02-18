@@ -117,6 +117,15 @@ myApp.displayMonster = (monster) => {
 
 };
 
+const random = Math.floor(Math.random() * 6);
+
+const getRandomOpponent = function(){
+    displayMonster(random);
+
+}
+console.log(getRandomOpponent)
+
+
 myApp.init = () => {
     $('body').on('click','.monster', function(){
         $('.attack-box').append('<button>ATTACK!!!!</button>')
