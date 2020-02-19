@@ -128,7 +128,6 @@ myApp.displayEnemy = (monster) => {
     $('#enemy-stat-box').replaceWith(hitPoints, strength, con, dex, int, wis, cha);
 };
 
-
 myApp.getRandomMonster = () => {
     const listOfRandomOpponents = ['goblin', 'owlbear', 'orc', 'troll', 'sahuagin', 'gelatinous cube'];
     const random = Math.floor(Math.random() * listOfRandomOpponents.length);
@@ -148,7 +147,6 @@ myApp.getRandomMonster = () => {
             $('#enemy-img').attr('src', './assets/gobbo.png');
         });
         return monsterPromise
-        
     } else if (listOfRandomOpponents[random] === 'owlbear') {
         const monsterPromise = $.ajax({
             url: 'http://proxy.hackeryou.com',
@@ -179,7 +177,6 @@ myApp.getRandomMonster = () => {
             $('#enemy-img').attr('src', './assets/orc.png');
         });
         return monsterPromise
-        
     } else if (listOfRandomOpponents[random] === 'troll') {
         const monsterPromise = $.ajax({
             url: 'http://proxy.hackeryou.com',
@@ -210,7 +207,6 @@ myApp.getRandomMonster = () => {
             $('#enemy-img').attr('src', './assets/fishman2.png');
         });
         return monsterPromise
-        
     } else if (listOfRandomOpponents[random] === 'gelatinous cube') {
         const monsterPromise = $.ajax({
             url: 'http://proxy.hackeryou.com',
@@ -227,9 +223,7 @@ myApp.getRandomMonster = () => {
         });
         return monsterPromise
     }
-    // myApp.displayMonster();
 }
-
 
 myApp.init = () => {
     $('body').on('click', '#owlbear', function() {
@@ -260,10 +254,9 @@ myApp.init = () => {
         $('#monster-img').attr('src', './assets/cube2.png');
     });
     $('body').on('click', '.monster', function () {
-        $('.attack-box').append('<button>ATTACK!!!!</button>');
+        $('#attack-box').append('<button class="attack-button">ATTACK!!!!</button>');
         myApp.getRandomMonster();
     })
-
 }
 
 $(function() {

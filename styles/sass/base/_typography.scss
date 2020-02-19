@@ -4,20 +4,19 @@ html{
 }
 
 h1 {
-    font-family: 'Fondamento', cursive;
-    text-align: center;
-    text-transform: uppercase;
     color: #f2ffb7;
-    text-shadow: 1px 1px 2px #ffffb6;
+    font-family: 'Fondamento', cursive;
     font-size: 6rem;
-    
+    text-align: center;
+    text-shadow: 1px 1px 2px #ffffb6;
+    text-transform: uppercase;
 }
 
 h2 {
-    padding-top: 30px;
     font-size: 3.0rem;
     text-transform: uppercase;
     margin-bottom: 20px;
+    padding-top: 30px;
 }
 
 h2, 
