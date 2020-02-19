@@ -133,7 +133,7 @@ myApp.getRandomMonster = () => {
     const random = Math.floor(Math.random() * listOfRandomOpponents.length);
     
     if (listOfRandomOpponents[random] === 'goblin') {
-        const monsterPromise = $.ajax({
+        const enemyMonsterPromise = $.ajax({
             url: 'http://proxy.hackeryou.com',
             dataType: 'json',
             method: 'GET',
@@ -145,10 +145,12 @@ myApp.getRandomMonster = () => {
             // return data;
             myApp.displayEnemy(data);
             $('#enemy-img').attr('src', './assets/gobbo.png');
+            const enemyGoblinHP = 40;
+            $('#enemy-hp').append(`<p class="hp">HP: ${enemyGoblinHP}/40</p>`);
         });
-        return monsterPromise
+        return enemyMonsterPromise;
     } else if (listOfRandomOpponents[random] === 'owlbear') {
-        const monsterPromise = $.ajax({
+        const enemyMonsterPromise = $.ajax({
             url: 'http://proxy.hackeryou.com',
             dataType: 'json',
             method: 'GET',
@@ -160,11 +162,12 @@ myApp.getRandomMonster = () => {
             // return data;
             myApp.displayEnemy(data);
             $('#enemy-img').attr('src', './assets/Owlbear2.png');
-
+            const enemyOwlbearHP = 59;
+            $('#enemy-hp').append(`<p class="hp">HP: ${enemyOwlbearHP}/59</p>`);
         });
-        return monsterPromise
+        return enemyMonsterPromise;
     } else if (listOfRandomOpponents[random] === 'orc') {
-        const monsterPromise = $.ajax({
+        const enemyMonsterPromise = $.ajax({
             url: 'http://proxy.hackeryou.com',
             dataType: 'json',
             method: 'GET',
@@ -176,10 +179,12 @@ myApp.getRandomMonster = () => {
             // return data;
             myApp.displayEnemy(data);
             $('#enemy-img').attr('src', './assets/orc.png');
+            const enemyOrcHP = 50;
+            $('#enemy-hp').append(`<p class="hp">HP: ${enemyOrcHP}/50</p>`);
         });
-        return monsterPromise
+        return enemyMonsterPromise;
     } else if (listOfRandomOpponents[random] === 'troll') {
-        const monsterPromise = $.ajax({
+        const enemyMonsterPromise = $.ajax({
             url: 'http://proxy.hackeryou.com',
             dataType: 'json',
             method: 'GET',
@@ -191,10 +196,12 @@ myApp.getRandomMonster = () => {
             // return data;
             myApp.displayEnemy(data);
             $('#enemy-img').attr('src', './assets/O-Mad-Troll-Monster-620-Wide-with-margins.png');
+            const enemyTrollHP = 84;
+            $('#enemy-hp').append(`<p class="hp">HP: ${enemyTrollHP}/84</p>`);
         });
-        return monsterPromise
+        return enemyMonsterPromise;
     } else if (listOfRandomOpponents[random] === 'sahuagin') {
-        const monsterPromise = $.ajax({
+        const enemyMonsterPromise = $.ajax({
             url: 'http://proxy.hackeryou.com',
             dataType: 'json',
             method: 'GET',
@@ -206,10 +213,12 @@ myApp.getRandomMonster = () => {
             // return data;
             myApp.displayEnemy(data);
             $('#enemy-img').attr('src', './assets/fishman2.png');
+            const enemySahuaginHP = 60;
+            $('#enemy-hp').append(`<p class="hp">HP: ${enemySahuaginHP}/60</p>`);
         });
-        return monsterPromise
+        return enemyMonsterPromise;
     } else if (listOfRandomOpponents[random] === 'gelatinous cube') {
-        const monsterPromise = $.ajax({
+        const enemyMonsterPromise = $.ajax({
             url: 'http://proxy.hackeryou.com',
             dataType: 'json',
             method: 'GET',
@@ -221,8 +230,10 @@ myApp.getRandomMonster = () => {
             // return data;
             myApp.displayEnemy(data);
             $('#enemy-img').attr('src', './assets/cube2.png');
+            const enemyGelatinousCubeHP = 84;
+            $('#enemy-hp').append(`<p class="hp">HP: ${enemyGelatinousCubeHP}/84</p>`);
         });
-        return monsterPromise
+        return enemyMonsterPromise;
     }
 }
 
@@ -269,15 +280,15 @@ myApp.init = () => {
     $('body').on('click', '.monster', function () {
         $('#attack-box').append('<button class="attack-button id="attack">ATTACK!!!!</button>');
         myApp.getRandomMonster();
-        console.log(monsterPromise)
-        if(monster==='#owlbear'){
-            const enemyOwlBearHP = 59;
-            $('#enemy-hp').append(`<p class="hp">HP: ${enemyOwlBearHP}/59</p>`)
-        } 
+        // console.log(monsterPromise)
+        // if(monster==='#owlbear'){
+        //     const enemyOwlBearHP = 59;
+        //     $('#enemy-hp').append(`<p class="hp">HP: ${enemyOwlBearHP}/59</p>`)
+        // } 
     })
-    $('body').on('click', '#attack', function(){
+    // $('body').on('click', '#attack', function(){
 
-    })
+    // })
 }
 
 
