@@ -167,6 +167,7 @@ myApp.getRandomMonster = () => {
         });
         return enemyMonsterPromise;
     } else if (listOfRandomOpponents[random] === 'orc') {
+        // const enemyAttavckedHP
         const enemyMonsterPromise = $.ajax({
             url: 'http://proxy.hackeryou.com',
             dataType: 'json',
@@ -179,7 +180,7 @@ myApp.getRandomMonster = () => {
             // return data;
             myApp.displayEnemy(data);
             $('#enemy-img').attr('src', './assets/orc.png');
-            const enemyOrcHP = 50;
+            const enemyOrcHP =  50;
             $('#enemy-hp').append(`<p class="hp">HP: ${enemyOrcHP}/50</p>`);
         });
         return enemyMonsterPromise;
@@ -277,18 +278,22 @@ myApp.init = () => {
         const cubeHP = 84;
         $('#monster-hp').append(`<p class="hp">HP: ${cubeHP}/84</p>`)
     });
-    $('body').on('click', '.monster', function () {
-        $('#attack-box').append('<button class="attack-button id="attack">ATTACK!!!!</button>');
-        myApp.getRandomMonster();
-        // console.log(monsterPromise)
-        // if(monster==='#owlbear'){
-        //     const enemyOwlBearHP = 59;
-        //     $('#enemy-hp').append(`<p class="hp">HP: ${enemyOwlBearHP}/59</p>`)
-        // } 
-    })
-    // $('body').on('click', '#attack', function(){
 
-    // })
+    $('body').on('click', '.monster', function () {
+        $('#attack-box').append('<button class="attack-button" id="attack">ATTACK!!!!</button>');
+        myApp.getRandomMonster();
+    })
+
+    $('body').on('click', '#attack', function(){
+        const masterEnemyHP = [enemyTrollHP, enemySahuaginHP, enemyOwlbearHP, enemyOrcHP, enemyGelatinousCubeHP, enemyGoblinHP];
+        console.log('Hello')
+        // masterenemyHP should be equal to a random number - current HP of random enemy
+        // how to gt current random enemy 
+        //get the current enemy's HP 
+        //generate a random number to take away from the HP
+        //return the value
+        //update all HP to let variables
+    })
 }
 
 
