@@ -99,7 +99,7 @@ myApp.getGelatinousCube = () => {
 }
 
 myApp.displayMonster = (monster) => {
-    const hitPoints = `<li><p> Hit Points: ${monster.hit_points}</p></li>`
+    // const hitPoints = `<li><p> Hit Points: ${monster.hit_points}</p></li>`
     const strength = `<li><p> Strength: ${monster.strength}</p></li>`
     const con = `<li><p> Constitution: ${monster.constitution}</p></li>`
     const dex = `<li><p> Dexterity: ${monster.dexterity}</p></li>`
@@ -111,11 +111,11 @@ myApp.displayMonster = (monster) => {
 
     $('#gallery').hide();
     
-    $('#monster-stat-box').replaceWith(hitPoints, strength, con, dex, int, wis, cha);
+    $('#monster-stat-box').replaceWith( strength, con, dex, int, wis, cha);
 };
 
 myApp.displayEnemy = (monster) => {
-    const hitPoints = `<li><p> Hit Points: ${monster.hit_points}</p></li>`
+    // const hitPoints = `<li><p> Hit Points: ${monster.hit_points}</p></li>`
     const strength = `<li><p> Strength: ${monster.strength}</p></li>`
     const con = `<li><p> Constitution: ${monster.constitution}</p></li>`
     const dex = `<li><p> Dexterity: ${monster.dexterity}</p></li>`
@@ -125,7 +125,7 @@ myApp.displayEnemy = (monster) => {
 
     $('#enemy-monster-title').text(monster.name);
 
-    $('#enemy-stat-box').replaceWith(hitPoints, strength, con, dex, int, wis, cha);
+    $('#enemy-stat-box').replaceWith(strength, con, dex, int, wis, cha);
 };
 
 myApp.getRandomMonster = () => {
@@ -160,6 +160,7 @@ myApp.getRandomMonster = () => {
             // return data;
             myApp.displayEnemy(data);
             $('#enemy-img').attr('src', './assets/Owlbear2.png');
+
         });
         return monsterPromise
     } else if (listOfRandomOpponents[random] === 'orc') {
@@ -229,43 +230,63 @@ myApp.init = () => {
     $('body').on('click', '#owlbear', function() {
         myApp.getOwlbear();
         $('#monster-img').attr('src', './assets/Owlbear2.png');
+        const owlBearHP = 59;
+        $('#monster-hp').append(`<p class="hp">HP: ${owlBearHP}/59</p>`)
     });
     $('body').on('click', '#goblin', function() {
         myApp.getGoblin();
         $('#monster-img').attr('src', './assets/gobbo.png');
+        const goblinHP = 40;
+        $('#monster-hp').append(`<p class="hp">HP: ${goblinHP}/40</p>`)
     });
     $('body').on('click', '#orc', function() {
         myApp.getOrc();
         $('#monster-img').attr('src', './assets/orc.png');
+        const orcHP = 50;
+        $('#monster-hp').append(`<p class="hp">HP: ${orcHP}/50</p>`)
     });
 
     $('body').on('click', '#sahuagin', function() {
         myApp.getSahuagin();
         $('#monster-img').attr('src', './assets/fishman2.png');
+        const sahuaginHP = 60;
+        $('#monster-hp').append(`<p class="hp">HP: ${sahuaginHP}/60</p>`)
     });
 
     $('body').on('click', '#troll', function() {
         myApp.getTroll();
         $('#monster-img').attr('src', './assets/O-Mad-Troll-Monster-620-Wide-with-margins.png');
+        const trollHP = 84;
+        $('#monster-hp').append(`<p class="hp">HP: ${trollHP}/84</p>`)
     });
 
     $('body').on('click', '#gelatinous-cube', function() {
         myApp.getGelatinousCube();
         $('#monster-img').attr('src', './assets/cube2.png');
+        const cubeHP = 84;
+        $('#monster-hp').append(`<p class="hp">HP: ${cubeHP}/84</p>`)
     });
     $('body').on('click', '.monster', function () {
-        $('#attack-box').append('<button class="attack-button">ATTACK!!!!</button>');
+        $('#attack-box').append('<button class="attack-button id="attack">ATTACK!!!!</button>');
         myApp.getRandomMonster();
+        console.log(monsterPromise)
+        if(monster==='#owlbear'){
+            const enemyOwlBearHP = 59;
+            $('#enemy-hp').append(`<p class="hp">HP: ${enemyOwlBearHP}/59</p>`)
+        } 
+    })
+    $('body').on('click', '#attack', function(){
+
     })
 }
+
+
 
 $(function() {
     myApp.init();
 });
 
-// On click of selecting monster, randomizer selects random opponent as well 
-
-// image and stats display for both monster and opponent, but opponent does not have an attack button 
+//make a method, that checks the ID/Class of the random monster. based on that, append HP
 
 // User clicks Attack button
 
