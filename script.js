@@ -110,8 +110,8 @@ myApp.displayMonster = (monster) => {
     $('#select-monster-title').text(monster.name);
 
     $('#gallery').hide();
-    $('#gallery-container-all').replaceWith(hitPoints, strength, con, dex, int, wis, cha);
-    // figure out a way to get our stats both showing properly
+    
+    $('#monster-stat-box').replaceWith(hitPoints, strength, con, dex, int, wis, cha);
 };
 
 myApp.displayEnemy = (monster) => {
@@ -232,7 +232,6 @@ myApp.getRandomMonster = () => {
 
 
 myApp.init = () => {
-
     $('body').on('click', '#owlbear', function() {
         myApp.getOwlbear();
         $('#monster-img').attr('src', './assets/Owlbear2.png');

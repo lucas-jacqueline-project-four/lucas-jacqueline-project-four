@@ -11,80 +11,69 @@
     <title>Choose Your Character</title>
 </head>
 <body class="dimmed">
-    <div class="wrapper">
-        <div class="heading-box">
-            <h2 id="select-monster-title">Select Your Monster</h2>
-            <h2 id="enemy-monster-title"></h2>
-        </div>
-        <!-- <div class="monster-enemy-container"> -->
-        <div class="gallery-container-all"> 
+    <main>
+        <div class="wrapper">
+            <div class="heading-box">
+                <h2 id="select-monster-title">Select Your Monster</h2>
+                <h2 id="enemy-monster-title"></h2>
+            </div> 
             <ul class="gallery" id="gallery">
-                <!-- <div class="gallery-container-all" id="gallery-container-all"> -->
-                    <div class="gallery-container-top">
-                        <div class="gallery-flex-box">
-                            <li>
-                                <button class="monster" id="owlbear">
-                                    <img src="./assets/Owlbear2.png" alt="Owlbear">
-                                </button>
-                            </li>
-                        </div>
-                        <div class="gallery-flex-box">
-                            <li>
-                                <button class="monster" id="goblin">
-                                    <img src="./assets/gobbo.png" alt="goblin">
-                                </button>
-                            </li>
-                        </div>
-                        <div class="gallery-flex-box">
-                            <li>
-                                <button class="monster" id="orc">
-                                    <img src="./assets/orc.png" alt="orc">
-                                </button>
-                            </li>
-                        </div>
-                    </div>
-                    <div class="gallery-container-bottom">
-                        <div class="gallery-flex-box">    
-                            <li>
-                                <button class="monster" id="sahuagin">
-                                    <img src="./assets/fishman2.png" alt="sahuagin">
-                                </button>
-                            </li>
-                        </div>
-                        <div class="gallery-flex-box">
-                            <li>
-                                <button class="monster" id="troll">
-                                    <img src="./assets/O-Mad-Troll-Monster-620-Wide-with-margins.png" alt="Troll">
-                                </button>
-                            </li>
-                        </div>
-                        <div class="gallery-flex-box">
-                            <li>
-                                <button class="monster" id="gelatinous-cube">
-                                    <img src="./assets/cube2.png" alt="gelatinous cube">
-                                </button>
-                            </li>
-                        </div>
-                    </div>
-                <!-- </div> -->
+                <div class="gallery-container-top">
+                    <li class="gallery-flex-box">
+                        <button class="monster" id="owlbear">
+                            <img src="./assets/Owlbear2.png" alt="Owlbear">
+                        </button>
+                    </li>
+                    <li class="gallery-flex-box">
+                        <button class="monster" id="goblin">
+                            <img src="./assets/gobbo.png" alt="goblin">
+                        </button>
+                    </li>
+                    <li class="gallery-flex-box">
+                        <button class="monster" id="orc">
+                            <img src="./assets/orc.png" alt="orc">
+                        </button>
+                    </li>
+                </div>
+                <div class="gallery-container-bottom">
+                    <li class="gallery-flex-box">
+                        <button class="monster" id="sahuagin">
+                            <img src="./assets/fishman2.png" alt="sahuagin">
+                        </button>
+                    </li>
+                    <li class="gallery-flex-box">
+                        <button class="monster" id="troll">
+                            <img src="./assets/O-Mad-Troll-Monster-620-Wide-with-margins.png" alt="Troll">
+                        </button>
+                    </li>
+                    <li class="gallery-flex-box">
+                        <button class="monster" id="gelatinous-cube">
+                            <img src="./assets/cube2.png" alt="gelatinous cube">
+                        </button>
+                    </li>
+                </div>
             </ul>
-        </div>
-        <div class="monster-enemy-container">
-            <div id="enemy-stat-box">
+            <div class="stat-boxes">
+                <ul>
+                    <div id="monster-stat-box">
+                    </div>
+                </ul>
+                <ul>
+                    <div id="enemy-stat-box">
+                    </div>
+                </ul>
+            </div>
+            <div class="attack-box">
+            </div>
+            <div class="battle-container">
+                <div class="monster-box">
+                    <img src="" alt="" id="monster-img">
+                </div>
+                <div class="enemy-box">
+                    <img src="" alt="" id="enemy-img">
+                </div>
             </div>
         </div>
-        
-        </div>
-        <div class="attack-box">
-        </div>
-        <div class="battle-container">
-            <div class="monster-box">
-                <img src="" alt="" id="monster-img">
-            </div>
-            <div class="enemy-box">
-                <img src="" alt="" id="enemy-img">
-            </div>
-        </div>
-    </div>
+    </main>
 </body>
 </html>

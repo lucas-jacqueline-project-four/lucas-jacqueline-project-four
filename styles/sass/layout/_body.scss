@@ -1,12 +1,23 @@
+html {
+    height: 100%;
+}
+
 body {
     background-image: url("../assets/background.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
-
-
+    height: 100%;
 }
+
+.text-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
 .dimmed {
     position: relative;
 }
@@ -21,12 +32,4 @@ body {
     left: 0;
     right: 0;
     background: rgba(37, 37, 37, 0.5);
-}
-
-.text-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
 }
