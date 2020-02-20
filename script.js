@@ -169,8 +169,8 @@ myApp.getRandomMonster = () => {
             let enemyOwlbearHP = 59;
             $('#enemy-hp').append(`<p class="hp">HP: ${enemyOwlbearHP}/59</p>`);
             $('body').on('click', '#attack', function () {
-                let attackedHP = enemyOwlbearHP - 5;
-                console.log(attackedHP);
+                enemyOwlbearHP = enemyOwlbearHP - 5;
+                console.log(enemyOwlbearHP);
             });
         });
         return enemyMonsterPromise;
@@ -193,8 +193,8 @@ myApp.getRandomMonster = () => {
             let enemyOrcHP =  50;
             $('#enemy-hp').append(`<p class="hp">HP: ${enemyOrcHP}/50</p>`); 
             $('body').on('click', '#attack', function(){ 
-                let attackedHP = enemyOrcHP - 5;
-                console.log(attackedHP);
+                enemyOrcHP = enemyOrcHP - 5;
+                console.log(enemyOrcHP);
             });
         });
         return enemyMonsterPromise;
@@ -214,8 +214,8 @@ myApp.getRandomMonster = () => {
             let enemyTrollHP = 84;
             $('#enemy-hp').append(`<p class="hp">HP: ${enemyTrollHP}/84</p>`);
             $('body').on('click', '#attack', function () {
-                let attackedHP = enemyTrollHP - 5;
-                console.log(attackedHP);
+                enemyTrollHP = enemyTrollHP - 5;
+                console.log(enemyTrollHP);
             });
         });
         return enemyMonsterPromise;
@@ -235,8 +235,8 @@ myApp.getRandomMonster = () => {
             let enemySahuaginHP = 60;
             $('#enemy-hp').append(`<p class="hp">HP: ${enemySahuaginHP}/60</p>`);
             $('body').on('click', '#attack', function () {
-                let attackedHP = enemySahuaginHP - 5;
-                console.log(attackedHP);
+                enemySahuaginHP = enemySahuaginHP - 5;
+                console.log(enemySahuaginHP);
             });
         });
         return enemyMonsterPromise;
@@ -256,8 +256,8 @@ myApp.getRandomMonster = () => {
             let enemyGelatinousCubeHP = 84;
             $('#enemy-hp').append(`<p class="hp">HP: ${enemyGelatinousCubeHP}/84</p>`);
             $('body').on('click', '#attack', function () {
-                let attackedHP = enemyGelatinousCubeHP - 5;
-                console.log(attackedHP);
+                enemyGelatinousCubeHP = enemyGelatinousCubeHP - 5;
+                console.log(enemyGelatinousCubeHP);
             });
         });
         return enemyMonsterPromise;
