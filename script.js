@@ -167,7 +167,7 @@ myApp.getRandomMonster = () => {
         });
         return enemyMonsterPromise;
     } else if (listOfRandomOpponents[random] === 'orc') {
-        // const enemyAttavckedHP
+        // const enemyAttackedHP
         // const attackedOrcHP = enemyOrcHP;
         // return attackedOrcHP;
         const enemyMonsterPromise = $.ajax({
@@ -183,7 +183,11 @@ myApp.getRandomMonster = () => {
             myApp.displayEnemy(data);
             $('#enemy-img').attr('src', './assets/orc.png');
             let enemyOrcHP =  50;
-            $('#enemy-hp').append(`<p class="hp">HP: ${enemyOrcHP}/50</p>`);
+            $('#enemy-hp').append(`<p class="hp">HP: ${enemyOrcHP}/50</p>`); 
+            $('body').on('click', '#attack', function(){ 
+                let attackedHP = enemyOrcHP - 5;
+                console.log(attackedHP);
+            });
         });
         return enemyMonsterPromise;
     } else if (listOfRandomOpponents[random] === 'troll') {
@@ -286,15 +290,19 @@ myApp.init = () => {
         myApp.getRandomMonster();
     })
 
-    $('body').on('click', '#attack', function(){
+    // $('body').on('click', '#attack', function(){
         // const masterEnemyHP = [enemyTrollHP, enemySahuaginHP, enemyOwlbearHP, enemyOrcHP, enemyGelatinousCubeHP, enemyGoblinHP];
-        console.log('Hello')
+        // console.log('Hello')
         // masterenemyHP should be equal to a random number - current HP of random enemy
         // how to gt current random enemy 
         //get the current enemy's HP 
         //return the value
         // attackedOrcHP();
-    })
+
+        // When we click on a monster, a enemy image is randomly generated, as well as their corresponding stats, title and HP
+        // When we click on the Attack button, we want 5 to be subtracted from the enemy's generated HP
+        // Current problem: We want to apply an On Click to the attack button, but don't know how to get it to reach the enemy's HP, because it was generated and lives in a different function
+    // })
 }
 
 
