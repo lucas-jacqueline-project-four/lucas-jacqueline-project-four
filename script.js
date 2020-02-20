@@ -146,13 +146,14 @@ myApp.getRandomMonster = () => {
             // return data;
             myApp.displayEnemy(data);
             $('#enemy-img').attr('src', './assets/gobbo.png');
-            let enemyHP = 40;
+            enemyHP = 40;
             $('#enemy-hp').append(`<p class="hp">HP: ${enemyHP}/40</p>`);
             $('body').on('click', '#attack', function () {
                 enemyHP = enemyHP - 5;
                 $('#enemy-hp').replaceWith(`<p class="hp" id="enemy-hp">HP: ${enemyHP}/40`);
                 console.log(enemyHP);
                 console.log($('#enemy-hp'));
+                myApp.checkWinner();
             });
         });
         return enemyMonsterPromise;
@@ -176,6 +177,7 @@ myApp.getRandomMonster = () => {
                 $('#enemy-hp').replaceWith(`<p class="hp" id="enemy-hp">HP: ${enemyHP}/59`);
                 console.log(enemyHP);
                 console.log($('#enemy-hp'));
+                myApp.checkWinner();
             });
         });
         return enemyMonsterPromise;
@@ -202,6 +204,7 @@ myApp.getRandomMonster = () => {
                 $('#enemy-hp').replaceWith(`<p class="hp" id="enemy-hp">HP: ${enemyHP}/50`);
                 console.log(enemyHP);
                 console.log($('#enemy-hp'));
+                myApp.checkWinner();
             });
         });
         return enemyMonsterPromise;
@@ -225,6 +228,7 @@ myApp.getRandomMonster = () => {
                 $('#enemy-hp').replaceWith(`<p class="hp" id="enemy-hp">HP: ${enemyHP}/84`);
                 console.log(enemyHP);
                 console.log($('#enemy-hp'));
+                myApp.checkWinner();
             });
         });
         return enemyMonsterPromise;
@@ -248,6 +252,7 @@ myApp.getRandomMonster = () => {
                 $('#enemy-hp').replaceWith(`<p class="hp" id="enemy-hp">HP: ${enemyHP}/60`);
                 console.log(enemyHP);
                 console.log($('#enemy-hp'));
+                myApp.checkWinner();
             });
         });
         return enemyMonsterPromise;
@@ -271,6 +276,7 @@ myApp.getRandomMonster = () => {
                 $('#enemy-hp').replaceWith(`<p class="hp" id="enemy-hp">HP: ${enemyHP}/84`);
                 console.log(enemyHP);
                 console.log($('#enemy-hp'));
+                myApp.checkWinner();
             });
         });
         return enemyMonsterPromise;
@@ -344,72 +350,51 @@ myApp.init = () => {
             userHP = userHP - 3;
             $('#monster-hp').replaceWith(`<p class="hp" id="monster-hp">HP: ${userHP}/84</p>`);
         });
+        
     });
 
     $('body').on('click', '.monster', function () {
         $('#attack-box').append('<button class="attack-button" id="attack">ATTACK!!!!</button>');
         myApp.getRandomMonster();
     })
+
+
+ 
+
+
     // $('body').on('click', '#attack', function(){
     //     userHP = userHP - 3;
         
         console.log(userHP)
     // })
 
-    // $('body').on('click', '#attack', function(){
-        // const masterEnemyHP = [enemyTrollHP, enemySahuaginHP, enemyOwlbearHP, enemyOrcHP, enemyGelatinousCubeHP, enemyGoblinHP];
-        // console.log('Hello')
-        // masterenemyHP should be equal to a random number - current HP of random enemy
-        // how to gt current random enemy 
-        //get the current enemy's HP 
-        //return the value
-        // attackedOrcHP();
-
-        // When we click on a monster, a enemy image is randomly generated, as well as their corresponding stats, title and HP
-        // When we click on the Attack button, we want 5 to be subtracted from the enemy's generated HP
-        // Current problem: We want to apply an On Click to the attack button, but don't know how to get it to reach the enemy's HP, because it was generated and lives in a different function
-    // })
 }
 
-
+myApp.checkWinner=function(){
+    if (userHP < 1 && enemyHP < 1) {
+        $('.body-container').replaceWith(`<section class='end-page'><h1>you tied</h1><p>Due to unfortunate circumstances, our two brave competitors have met with a grisly end. A sorry sight, our poor groundskeepers have a large mess to clean up.</p><a href=#><button>try again</button></a></section>`);
+    } else if (userHP < 1) {
+        $('.body-container').replaceWith(`<section class='end-page'><h1>you lose</h1><p>A sad, sorry fate. At least your body will keep the Vultures happy!</p><a href=#><button>try again</button></a></section>`);
+    } else if (enemyHP < 1) {
+        $('.body-container').replaceWith(`<section class='end-page'><h1>you win</h1><p>You live to see another day, but should you wish to tempt fate again, you know where to go!</p><a href=#><button>try again</button></a></section>`);
+    }
+};
 
 $(function() {
     myApp.init();
 });
+// If (UserHP === 0) -> page says "You Lose"
+// If (OpponentHP === 0) -> page says "You Win"
 
-//make a method, that checks the ID/Class of the random monster. based on that, append HP
-
-// User clicks Attack button
-
-// Strengths
-// Owlbear: 20 
-// Goblin: 8
-// Orc: 16
-// Fishman: 13
-// Troll: 18
-// Cube: 14
-
-// HP
-// Owlbear: 59
-// Goblin: 7 to balance , maybe set this 40
-// Orc: 15 possibly set to 50
-// Fishman: 22 possibly set to 60
-// Troll: 84
-// Cube: 84
-
-//instead of the stats ul, the HP can be an h3 placed beside the stats list. 
-//attack button will be placed at the center of the screen to attract user to click.
-
+//STRETCH GOALS
 // If Strength > 15, then take off 10HP from opponent
 // If Strength < 15, then take off 5HP from opponent 
 
 // If Opponent Strength > 15, then take off 10HP from User
 // If Opponent Strength < 15, then take off 5HP from User
 
-// If (UserHP === 0) -> page says "You Lose"
-// If (OpponentHP === 0) -> page says "You Win"
-
-//MVP for now, have the attacks of user and opponent happen at the same time
-
 //have a to-hit modifier. Attack === 0-1 = miss. attack === 2-9 = hit.
+
+
+
 
