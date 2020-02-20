@@ -392,6 +392,7 @@ li p {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .monster {
@@ -500,6 +501,21 @@ li p {
 .hp {
   font-size: 2.3rem;
   font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    margin-top: 0px;
+  }
+  .heading-box h2 {
+    font-size: 2.5rem;
+  }
+  .hp {
+    font-size: 1.4rem;
+  }
+  .stat-boxes ul li p {
+    font-size: 1rem;
+  }
 }
 
 .end-page {
