@@ -1,32 +1,27 @@
+html {
+    height: 100%;
+}
+
 body {
     background-image: url("../assets/background.jpg");
-    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
-
-
+    background-size: cover;
+    height: 100%;
 }
+
 .dimmed {
     position: relative;
 }
 
 .dimmed:after {
     content: " ";
-    z-index: -1;
-    display: block;
-    position: absolute;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
     background: rgba(37, 37, 37, 0.5);
-}
-
-.text-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
 }
