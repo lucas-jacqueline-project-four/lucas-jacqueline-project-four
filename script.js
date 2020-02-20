@@ -372,12 +372,16 @@ myApp.init = () => {
 
 myApp.checkWinner=function(){
     if (userHP < 1 && enemyHP < 1) {
-        $('.body-container').replaceWith(`<section class='end-page'><h1>you tied</h1><p>Due to unfortunate circumstances, our two brave competitors have met with a grisly end. A sorry sight, our poor groundskeepers have a large mess to clean up.</p><a href=#><button>try again</button></a></section>`);
+        $('.body-container').replaceWith(`<section class='end-page'><h1>you tied</h1><p>Due to unfortunate circumstances, our two brave competitors have met with a grisly end. A sorry sight, our poor groundskeepers have a large mess to clean up.</p><a href=#><button id="try-again">try again</button></a></section>`);
     } else if (userHP < 1) {
-        $('.body-container').replaceWith(`<section class='end-page'><h1>you lose</h1><p>A sad, sorry fate. At least your body will keep the Vultures happy!</p><a href=#><button>try again</button></a></section>`);
+        $('.body-container').replaceWith(`<section class='end-page'><h1>you lose</h1><p>A sad, sorry fate. At least your body will keep the Vultures happy!</p><a href=#><button id="try-again">try again</button></a></section>`);
     } else if (enemyHP < 1) {
-        $('.body-container').replaceWith(`<section class='end-page'><h1>you win</h1><p>You live to see another day, but should you wish to tempt fate again, you know where to go!</p><a href=#><button>try again</button></a></section>`);
+        $('.body-container').replaceWith(`<section class='end-page'><h1>you win</h1><p>You live to see another day, but should you wish to tempt fate again, you know where to go!</p><a href=#><button id="try-again">try again</button></a></section>`);
     }
+
+    $('#try-again').on('click', function(){
+        location.reload();
+    });
 };
 
 $(function() {
