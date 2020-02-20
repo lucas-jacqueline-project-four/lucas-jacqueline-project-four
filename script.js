@@ -265,7 +265,7 @@ let enemyHP = 0;
 myApp.init = () => {
     $('body').on('click', '#attack', function () {
         enemyHP = enemyHP - 5;
-        $('#enemy-hp').replaceWith(`<p class="hp" id="enemy-hp">HP: ${enemyHP}/84</p>`);
+        $('#enemy-hp').replaceWith(`<p class="hp" id="enemy-hp">HP: ${enemyHP}/${enemyTotalHP}</p>`);
         console.log(enemyHP);
         console.log($('#enemy-hp'));
     });
