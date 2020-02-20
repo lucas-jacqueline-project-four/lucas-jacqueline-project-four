@@ -357,6 +357,7 @@ myApp.init = () => {
         $('#attack-box').append('<button class="attack-button" id="attack">ATTACK!!!!</button>');
         myApp.getRandomMonster();
         $('.monster').attr("disabled", true);
+        $('#gallery').hide();
     })
 
 
