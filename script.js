@@ -278,53 +278,83 @@ myApp.getRandomMonster = () => {
 }
 
 let enemyHP = 0;
+let userHP = 0;
 
 myApp.init = () => {
    
     $('body').on('click', '#owlbear', function() {
         myApp.getOwlbear();
         $('#monster-img').attr('src', './assets/Owlbear2.png');
-        let owlBearHP = 59;
-        $('#monster-hp').append(`<p class="hp">HP: ${owlBearHP}/59</p>`)
+        userHP = 59;
+        $('#monster-hp').append(`<p class="hp">HP: ${userHP}/59</p>`);
+        $('body').on('click', '#attack', function () {
+            userHP = userHP - 3;
+            $('#monster-hp').replaceWith(`<p class="hp" id="monster-hp">HP: ${userHP}/59</p>`);
+        });
     });
     $('body').on('click', '#goblin', function() {
         myApp.getGoblin();
         $('#monster-img').attr('src', './assets/gobbo.png');
-        let goblinHP = 40;
-        $('#monster-hp').append(`<p class="hp">HP: ${goblinHP}/40</p>`)
+        userHP = 40;
+        $('#monster-hp').append(`<p class="hp">HP: ${userHP}/40</p>`)
+        $('body').on('click', '#attack', function () {
+            userHP = userHP - 3;
+            $('#monster-hp').replaceWith(`<p class="hp" id="monster-hp">HP: ${userHP}/40</p>`)
+        });
     });
     $('body').on('click', '#orc', function() {
         myApp.getOrc();
         $('#monster-img').attr('src', './assets/orc.png');
-        let orcHP = 50;
-        $('#monster-hp').append(`<p class="hp">HP: ${orcHP}/50</p>`)
+        userHP = 50;
+        $('#monster-hp').append(`<p class="hp">HP: ${userHP}/50</p>`);
+        $('body').on('click', '#attack', function () {
+            userHP = userHP - 3;
+            $('#monster-hp').replaceWith(`<p class="hp" id="monster-hp">HP: ${userHP}/50</p>`);
+        });
     });
 
     $('body').on('click', '#sahuagin', function() {
         myApp.getSahuagin();
         $('#monster-img').attr('src', './assets/fishman2.png');
-        let sahuaginHP = 60;
-        $('#monster-hp').append(`<p class="hp">HP: ${sahuaginHP}/60</p>`)
+        userHP = 60;
+        $('#monster-hp').append(`<p class="hp">HP: ${userHP}/60</p>`)
+        $('body').on('click', '#attack', function () {
+            userHP = userHP - 3;
+            $('#monster-hp').replaceWith(`<p class="hp" id="monster-hp">HP: ${userHP}/60</p>`);
+        });
     });
 
     $('body').on('click', '#troll', function() {
         myApp.getTroll();
         $('#monster-img').attr('src', './assets/O-Mad-Troll-Monster-620-Wide-with-margins.png');
-        let trollHP = 84;
-        $('#monster-hp').append(`<p class="hp">HP: ${trollHP}/84</p>`)
+        userHP = 84;
+        $('#monster-hp').append(`<p class="hp">HP: ${userHP}/84</p>`);
+        $('body').on('click', '#attack', function () {
+            userHP = userHP - 3;
+            $('#monster-hp').replaceWith(`<p class="hp" id="monster-hp">HP: ${userHP}/84</p>`);
+        });
     });
 
     $('body').on('click', '#gelatinous-cube', function() {
         myApp.getGelatinousCube();
         $('#monster-img').attr('src', './assets/cube2.png');
-        let cubeHP = 84;
-        $('#monster-hp').append(`<p class="hp">HP: ${cubeHP}/84</p>`)
+        userHP = 84;
+        $('#monster-hp').append(`<p class="hp">HP: ${userHP}/84</p>`);
+        $('body').on('click', '#attack', function () {
+            userHP = userHP - 3;
+            $('#monster-hp').replaceWith(`<p class="hp" id="monster-hp">HP: ${userHP}/84</p>`);
+        });
     });
 
     $('body').on('click', '.monster', function () {
         $('#attack-box').append('<button class="attack-button" id="attack">ATTACK!!!!</button>');
         myApp.getRandomMonster();
     })
+    // $('body').on('click', '#attack', function(){
+    //     userHP = userHP - 3;
+        
+        console.log(userHP)
+    // })
 
     // $('body').on('click', '#attack', function(){
         // const masterEnemyHP = [enemyTrollHP, enemySahuaginHP, enemyOwlbearHP, enemyOrcHP, enemyGelatinousCubeHP, enemyGoblinHP];
