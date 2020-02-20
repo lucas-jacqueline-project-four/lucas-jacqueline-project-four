@@ -258,6 +258,7 @@ myApp.getRandomMonster = () => {
             $('body').on('click', '#attack', function () {
                 enemyGelatinousCubeHP = enemyGelatinousCubeHP - 5;
                 console.log(enemyGelatinousCubeHP);
+                $('#enemy-hp').replaceWith(`<p class="hp">HP: ${enemyGelatinousCubeHP}/84</p>`);
             });
         });
         return enemyMonsterPromise;
