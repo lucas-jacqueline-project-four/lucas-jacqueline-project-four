@@ -288,7 +288,7 @@ let userHP = 0;
 
 myApp.init = () => {
    
-    $('body').on('click', '#owlbear', function() {
+    $('body').one('click', '#owlbear', function(e) {
         myApp.getOwlbear();
         $('#monster-img').attr('src', './assets/Owlbear2.png');
         userHP = 59;
@@ -356,6 +356,7 @@ myApp.init = () => {
     $('body').on('click', '.monster', function () {
         $('#attack-box').append('<button class="attack-button" id="attack">ATTACK!!!!</button>');
         myApp.getRandomMonster();
+        $('.monster').attr("disabled", true);
     })
 
 

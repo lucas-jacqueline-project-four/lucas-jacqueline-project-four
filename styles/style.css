@@ -355,6 +355,7 @@ a button {
       -ms-flex-pack: center;
           justify-content: center;
   height: 100vh;
+  text-align: center;
 }
 
 .landing-subtitle {
