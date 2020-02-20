@@ -129,8 +129,7 @@ myApp.displayEnemy = (monster) => {
 };
 
 myApp.getRandomMonster = () => {
-    // const listOfRandomOpponents = ['goblin', 'owlbear', 'orc', 'troll', 'sahuagin', 'gelatinous cube'];
-    const listOfRandomOpponents = ['gelatinous cube'];
+    const listOfRandomOpponents = ['goblin', 'owlbear', 'orc', 'troll', 'sahuagin', 'gelatinous cube'];
     const random = Math.floor(Math.random() * listOfRandomOpponents.length);
     
     if (listOfRandomOpponents[random] === 'goblin') {
