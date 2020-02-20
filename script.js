@@ -147,6 +147,10 @@ myApp.getRandomMonster = () => {
             $('#enemy-img').attr('src', './assets/gobbo.png');
             let enemyGoblinHP = 40;
             $('#enemy-hp').append(`<p class="hp">HP: ${enemyGoblinHP}/40</p>`);
+            $('body').on('click', '#attack', function () {
+                let attackedHP = enemyGoblinHP - 5;
+                console.log(attackedHP);
+            });
         });
         return enemyMonsterPromise;
     } else if (listOfRandomOpponents[random] === 'owlbear') {
@@ -164,6 +168,10 @@ myApp.getRandomMonster = () => {
             $('#enemy-img').attr('src', './assets/Owlbear2.png');
             let enemyOwlbearHP = 59;
             $('#enemy-hp').append(`<p class="hp">HP: ${enemyOwlbearHP}/59</p>`);
+            $('body').on('click', '#attack', function () {
+                let attackedHP = enemyOwlbearHP - 5;
+                console.log(attackedHP);
+            });
         });
         return enemyMonsterPromise;
     } else if (listOfRandomOpponents[random] === 'orc') {
@@ -205,6 +213,10 @@ myApp.getRandomMonster = () => {
             $('#enemy-img').attr('src', './assets/O-Mad-Troll-Monster-620-Wide-with-margins.png');
             let enemyTrollHP = 84;
             $('#enemy-hp').append(`<p class="hp">HP: ${enemyTrollHP}/84</p>`);
+            $('body').on('click', '#attack', function () {
+                let attackedHP = enemyTrollHP - 5;
+                console.log(attackedHP);
+            });
         });
         return enemyMonsterPromise;
     } else if (listOfRandomOpponents[random] === 'sahuagin') {
@@ -222,6 +234,10 @@ myApp.getRandomMonster = () => {
             $('#enemy-img').attr('src', './assets/fishman2.png');
             let enemySahuaginHP = 60;
             $('#enemy-hp').append(`<p class="hp">HP: ${enemySahuaginHP}/60</p>`);
+            $('body').on('click', '#attack', function () {
+                let attackedHP = enemySahuaginHP - 5;
+                console.log(attackedHP);
+            });
         });
         return enemyMonsterPromise;
     } else if (listOfRandomOpponents[random] === 'gelatinous cube') {
@@ -239,6 +255,10 @@ myApp.getRandomMonster = () => {
             $('#enemy-img').attr('src', './assets/cube2.png');
             let enemyGelatinousCubeHP = 84;
             $('#enemy-hp').append(`<p class="hp">HP: ${enemyGelatinousCubeHP}/84</p>`);
+            $('body').on('click', '#attack', function () {
+                let attackedHP = enemyGelatinousCubeHP - 5;
+                console.log(attackedHP);
+            });
         });
         return enemyMonsterPromise;
     }
