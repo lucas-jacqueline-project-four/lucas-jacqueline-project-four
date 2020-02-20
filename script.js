@@ -148,8 +148,8 @@ myApp.getRandomMonster = () => {
             let enemyGoblinHP = 40;
             $('#enemy-hp').append(`<p class="hp">HP: ${enemyGoblinHP}/40</p>`);
             $('body').on('click', '#attack', function () {
-                let attackedHP = enemyGoblinHP - 5;
-                console.log(attackedHP);
+                enemyGoblinHP = enemyGoblinHP - 5;
+                console.log(enemyGoblinHP);
             });
         });
         return enemyMonsterPromise;
