@@ -130,6 +130,7 @@ myApp.displayEnemy = (monster) => {
 
 myApp.getRandomMonster = () => {
     const listOfRandomOpponents = ['goblin', 'owlbear', 'orc', 'troll', 'sahuagin', 'gelatinous cube'];
+    // const listOfRandomOpponents = [ 'sahuagin', 'gelatinous cube'];
     const random = Math.floor(Math.random() * listOfRandomOpponents.length);
     
     if (listOfRandomOpponents[random] === 'goblin') {
@@ -145,11 +146,13 @@ myApp.getRandomMonster = () => {
             // return data;
             myApp.displayEnemy(data);
             $('#enemy-img').attr('src', './assets/gobbo.png');
-            let enemyGoblinHP = 40;
-            $('#enemy-hp').append(`<p class="hp">HP: ${enemyGoblinHP}/40</p>`);
+            let enemyHP = 40;
+            $('#enemy-hp').append(`<p class="hp">HP: ${enemyHP}/40</p>`);
             $('body').on('click', '#attack', function () {
-                enemyGoblinHP = enemyGoblinHP - 5;
-                console.log(enemyGoblinHP);
+                enemyHP = enemyHP - 5;
+                $('#enemy-hp').replaceWith(`<p class="hp" id="enemy-hp">HP: ${enemyHP}/40`);
+                console.log(enemyHP);
+                console.log($('#enemy-hp'));
             });
         });
         return enemyMonsterPromise;
@@ -166,11 +169,13 @@ myApp.getRandomMonster = () => {
             // return data;
             myApp.displayEnemy(data);
             $('#enemy-img').attr('src', './assets/Owlbear2.png');
-            let enemyOwlbearHP = 59;
-            $('#enemy-hp').append(`<p class="hp">HP: ${enemyOwlbearHP}/59</p>`);
+            enemyHP = 59;
+            $('#enemy-hp').append(`<p class="hp">HP: ${enemyHP}/59</p>`);
             $('body').on('click', '#attack', function () {
-                enemyOwlbearHP = enemyOwlbearHP - 5;
-                console.log(enemyOwlbearHP);
+                enemyHP = enemyHP - 5;
+                $('#enemy-hp').replaceWith(`<p class="hp" id="enemy-hp">HP: ${enemyHP}/59`);
+                console.log(enemyHP);
+                console.log($('#enemy-hp'));
             });
         });
         return enemyMonsterPromise;
@@ -190,11 +195,13 @@ myApp.getRandomMonster = () => {
             // return data;
             myApp.displayEnemy(data);
             $('#enemy-img').attr('src', './assets/orc.png');
-            let enemyOrcHP =  50;
-            $('#enemy-hp').append(`<p class="hp">HP: ${enemyOrcHP}/50</p>`); 
+            enemyHP =  50;
+            $('#enemy-hp').append(`<p class="hp">HP: ${enemyHP}/50</p>`); 
             $('body').on('click', '#attack', function(){ 
-                enemyOrcHP = enemyOrcHP - 5;
-                console.log(enemyOrcHP);
+                enemyHP = enemyHP - 5;
+                $('#enemy-hp').replaceWith(`<p class="hp" id="enemy-hp">HP: ${enemyHP}/50`);
+                console.log(enemyHP);
+                console.log($('#enemy-hp'));
             });
         });
         return enemyMonsterPromise;
@@ -211,11 +218,13 @@ myApp.getRandomMonster = () => {
             // return data;
             myApp.displayEnemy(data);
             $('#enemy-img').attr('src', './assets/O-Mad-Troll-Monster-620-Wide-with-margins.png');
-            let enemyTrollHP = 84;
-            $('#enemy-hp').append(`<p class="hp">HP: ${enemyTrollHP}/84</p>`);
+            enemyHP = 84;
+            $('#enemy-hp').append(`<p class="hp">HP: ${enemyHP}/84</p>`);
             $('body').on('click', '#attack', function () {
-                enemyTrollHP = enemyTrollHP - 5;
-                console.log(enemyTrollHP);
+                enemyHP = enemyHP - 5;
+                $('#enemy-hp').replaceWith(`<p class="hp" id="enemy-hp">HP: ${enemyHP}/84`);
+                console.log(enemyHP);
+                console.log($('#enemy-hp'));
             });
         });
         return enemyMonsterPromise;
@@ -232,11 +241,13 @@ myApp.getRandomMonster = () => {
             // return data;
             myApp.displayEnemy(data);
             $('#enemy-img').attr('src', './assets/fishman2.png');
-            let enemySahuaginHP = 60;
-            $('#enemy-hp').append(`<p class="hp">HP: ${enemySahuaginHP}/60</p>`);
+            enemyHP = 60;
+            $('#enemy-hp').append(`<p class="hp">HP: ${enemyHP}/60</p>`);
             $('body').on('click', '#attack', function () {
-                enemySahuaginHP = enemySahuaginHP - 5;
-                console.log(enemySahuaginHP);
+                enemyHP = enemyHP - 5;
+                $('#enemy-hp').replaceWith(`<p class="hp" id="enemy-hp">HP: ${enemyHP}/60`);
+                console.log(enemyHP);
+                console.log($('#enemy-hp'));
             });
         });
         return enemyMonsterPromise;
@@ -255,6 +266,12 @@ myApp.getRandomMonster = () => {
             $('#enemy-img').attr('src', './assets/cube2.png');
             enemyHP = 84;
             $('#enemy-hp').append(`<p class="hp">HP: ${enemyHP}/84</p>`);
+            $('body').on('click', '#attack', function () {
+                enemyHP = enemyHP - 5;
+                $('#enemy-hp').replaceWith(`<p class="hp" id="enemy-hp">HP: ${enemyHP}/84`);
+                console.log(enemyHP);
+                console.log($('#enemy-hp'));
+            });
         });
         return enemyMonsterPromise;
     }
@@ -263,12 +280,7 @@ myApp.getRandomMonster = () => {
 let enemyHP = 0;
 
 myApp.init = () => {
-    $('body').on('click', '#attack', function () {
-        enemyHP = enemyHP - 5;
-        $('#enemy-hp').replaceWith(`<p class="hp" id="enemy-hp">HP: ${enemyHP}/${enemyTotalHP}</p>`);
-        console.log(enemyHP);
-        console.log($('#enemy-hp'));
-    });
+   
     $('body').on('click', '#owlbear', function() {
         myApp.getOwlbear();
         $('#monster-img').attr('src', './assets/Owlbear2.png');
