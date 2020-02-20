@@ -129,7 +129,8 @@ myApp.displayEnemy = (monster) => {
 };
 
 myApp.getRandomMonster = () => {
-    const listOfRandomOpponents = ['goblin', 'owlbear', 'orc', 'troll', 'sahuagin', 'gelatinous cube'];
+    // const listOfRandomOpponents = ['goblin', 'owlbear', 'orc', 'troll', 'sahuagin', 'gelatinous cube'];
+    const listOfRandomOpponents = ['gelatinous cube'];
     const random = Math.floor(Math.random() * listOfRandomOpponents.length);
     
     if (listOfRandomOpponents[random] === 'goblin') {
@@ -253,19 +254,22 @@ myApp.getRandomMonster = () => {
             // return data;
             myApp.displayEnemy(data);
             $('#enemy-img').attr('src', './assets/cube2.png');
-            let enemyGelatinousCubeHP = 84;
-            $('#enemy-hp').append(`<p class="hp">HP: ${enemyGelatinousCubeHP}/84</p>`);
-            $('body').on('click', '#attack', function () {
-                enemyGelatinousCubeHP = enemyGelatinousCubeHP - 5;
-                console.log(enemyGelatinousCubeHP);
-                $('#enemy-hp').replaceWith(`<p class="hp">HP: ${enemyGelatinousCubeHP}/84</p>`);
-            });
+            enemyHP = 84;
+            $('#enemy-hp').append(`<p class="hp">HP: ${enemyHP}/84</p>`);
         });
         return enemyMonsterPromise;
     }
 }
 
+let enemyHP = 0;
+
 myApp.init = () => {
+    $('body').on('click', '#attack', function () {
+        enemyHP = enemyHP - 5;
+        $('#enemy-hp').replaceWith(`<p class="hp" id="enemy-hp">HP: ${enemyHP}/84</p>`);
+        console.log(enemyHP);
+        console.log($('#enemy-hp'));
+    });
     $('body').on('click', '#owlbear', function() {
         myApp.getOwlbear();
         $('#monster-img').attr('src', './assets/Owlbear2.png');
