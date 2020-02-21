@@ -10,7 +10,7 @@ app.getOwlbear = () => {
         dataType: 'json',
         method: 'GET',
         data: {
-            reqUrl: `https://dnd5eapi.co/api/monsters/owlbear`,
+            reqUrl: `http://dnd5eapi.co/api/monsters/owlbear`,
         }
     }).then((data) => {
         app.displayMonster(data);
@@ -24,7 +24,7 @@ app.getGoblin = () => {
         dataType: 'json',
         method: 'GET',
         data: {
-            reqUrl: `https://dnd5eapi.co/api/monsters/goblin`,
+            reqUrl: `http://dnd5eapi.co/api/monsters/goblin`,
         }
     }).then((data) => {
         app.displayMonster(data);
@@ -38,7 +38,7 @@ app.getOrc = () => {
         dataType: 'json',
         method: 'GET',
         data: {
-            reqUrl: `https://dnd5eapi.co/api/monsters/orc`,
+            reqUrl: `http://dnd5eapi.co/api/monsters/orc`,
         }
     }).then((data) => {
         app.displayMonster(data);
@@ -52,7 +52,7 @@ app.getSahuagin = () => {
         dataType: 'json',
         method: 'GET',
         data: {
-            reqUrl: `https://dnd5eapi.co/api/monsters/sahuagin`,
+            reqUrl: `http://dnd5eapi.co/api/monsters/sahuagin`,
         }
     }).then((data) => {
         app.displayMonster(data);
@@ -66,7 +66,7 @@ app.getTroll = () => {
         dataType: 'json',
         method: 'GET',
         data: {
-            reqUrl: `https://dnd5eapi.co/api/monsters/troll`,
+            reqUrl: `http://dnd5eapi.co/api/monsters/troll`,
         }
     }).then((data) => {
         app.displayMonster(data);
@@ -80,7 +80,7 @@ app.getGelatinousCube = () => {
         dataType: 'json',
         method: 'GET',
         data: {
-            reqUrl: `https://dnd5eapi.co/api/monsters/gelatinous-cube`,
+            reqUrl: `http://dnd5eapi.co/api/monsters/gelatinous-cube`,
         }
     }).then((data) => {
         app.displayMonster(data);;
@@ -132,7 +132,7 @@ app.getRandomMonster = () => {
             dataType: 'json',
             method: 'GET',
             data: {
-                reqUrl: `https://dnd5eapi.co/api/monsters/goblin`,
+                reqUrl: `http://dnd5eapi.co/api/monsters/goblin`,
             }
         }).then((data) => {
             app.displayEnemy(data);
@@ -152,7 +152,7 @@ app.getRandomMonster = () => {
             dataType: 'json',
             method: 'GET',
             data: {
-                reqUrl: `https://dnd5eapi.co/api/monsters/owlbear`,
+                reqUrl: `http://dnd5eapi.co/api/monsters/owlbear`,
             }
         }).then((data) => {
             app.displayEnemy(data);
@@ -172,7 +172,7 @@ app.getRandomMonster = () => {
             dataType: 'json',
             method: 'GET',
             data: {
-                reqUrl: `https://dnd5eapi.co/api/monsters/orc`,
+                reqUrl: `http://dnd5eapi.co/api/monsters/orc`,
             }
         }).then((data) => {
             app.displayEnemy(data);
@@ -192,7 +192,7 @@ app.getRandomMonster = () => {
             dataType: 'json',
             method: 'GET',
             data: {
-                reqUrl: `https://dnd5eapi.co/api/monsters/troll`,
+                reqUrl: `http://dnd5eapi.co/api/monsters/troll`,
             }
         }).then((data) => {
             app.displayEnemy(data);
@@ -212,7 +212,7 @@ app.getRandomMonster = () => {
             dataType: 'json',
             method: 'GET',
             data: {
-                reqUrl: `https://dnd5eapi.co/api/monsters/sahuagin`,
+                reqUrl: `http://dnd5eapi.co/api/monsters/sahuagin`,
             }
         }).then((data) => {
             app.displayEnemy(data);
@@ -232,7 +232,7 @@ app.getRandomMonster = () => {
             dataType: 'json',
             method: 'GET',
             data: {
-                reqUrl: `https://dnd5eapi.co/api/monsters/gelatinous-cube`,
+                reqUrl: `http://dnd5eapi.co/api/monsters/gelatinous-cube`,
             }
         }).then((data) => {
             app.displayEnemy(data);
