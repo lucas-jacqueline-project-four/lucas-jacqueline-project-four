@@ -281,8 +281,8 @@ h2 {
 
 h2,
 p {
-  font-family: 'Open Sans', sans-serif;
   color: #ffffb6;
+  font-family: 'Open Sans', sans-serif;
 }
 
 img {
@@ -293,8 +293,8 @@ img {
 
 .wrapper {
   max-width: 1280px;
-  margin: 0 auto;
   width: 80%;
+  margin: 0 auto;
 }
 
 html {
@@ -344,12 +344,13 @@ a button {
 
 a button:hover,
 .monster:hover {
+  background: #690b10;
   -webkit-transition: all 0.25s ease-in;
   transition: all 0.25s ease-in;
-  background: #690b10;
 }
 
 .text-container {
+  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -364,7 +365,6 @@ a button:hover,
       -ms-flex-pack: center;
           justify-content: center;
   height: 100vh;
-  text-align: center;
 }
 
 .landing-subtitle {
@@ -434,6 +434,11 @@ li p {
           justify-content: space-between;
 }
 
+.hp {
+  font-size: 2.3rem;
+  font-weight: bold;
+}
+
 .stat-boxes {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -498,6 +503,11 @@ li p {
           animation: glow 2s ease infinite;
 }
 
+.gallery-flex-box img {
+  max-width: 160px;
+  max-height: 160px;
+}
+
 @-webkit-keyframes shake {
   10%, 90% {
     -webkit-transform: translate3d(-11px, 0, 0);
@@ -541,19 +551,9 @@ li p {
           animation: shake 0.5s linear;
 }
 
-.gallery-flex-box img {
-  max-width: 160px;
-  max-height: 160px;
-}
-
 .gallery-flex-box:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-}
-
-.hp {
-  font-size: 2.3rem;
-  font-weight: bold;
 }
 
 @media (max-width: 480px) {
@@ -566,7 +566,7 @@ li p {
   .hp {
     font-size: 1.4rem;
   }
-  .stat-boxes ul li p {
+  .stat-boxes li p {
     font-size: 1rem;
   }
 }
@@ -579,12 +579,12 @@ li p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 200px 0;
 }
 

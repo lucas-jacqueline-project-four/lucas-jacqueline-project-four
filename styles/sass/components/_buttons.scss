@@ -14,9 +14,8 @@ a button {
     transition: all 0.3s ease;
 }
 
-
 a button:hover, 
 .monster:hover{
-    transition: all 0.25s ease-in;
     background: rgb(105, 11, 16);
+    transition: all 0.25s ease-in;
 }
