@@ -132,7 +132,7 @@ app.getRandomMonster = () => {
             dataType: 'json',
             method: 'GET',
             data: {
-                reqUrl: `http://dnd5eapi.co/api/monsters/goblin`,
+                reqUrl: `https://dnd5eapi.co/api/monsters/goblin`,
             }
         }).then((data) => {
             app.displayEnemy(data);
@@ -152,7 +152,7 @@ app.getRandomMonster = () => {
             dataType: 'json',
             method: 'GET',
             data: {
-                reqUrl: `http://dnd5eapi.co/api/monsters/owlbear`,
+                reqUrl: `https://dnd5eapi.co/api/monsters/owlbear`,
             }
         }).then((data) => {
             app.displayEnemy(data);
@@ -172,7 +172,7 @@ app.getRandomMonster = () => {
             dataType: 'json',
             method: 'GET',
             data: {
-                reqUrl: `http://dnd5eapi.co/api/monsters/orc`,
+                reqUrl: `https://dnd5eapi.co/api/monsters/orc`,
             }
         }).then((data) => {
             app.displayEnemy(data);
@@ -192,7 +192,7 @@ app.getRandomMonster = () => {
             dataType: 'json',
             method: 'GET',
             data: {
-                reqUrl: `http://dnd5eapi.co/api/monsters/troll`,
+                reqUrl: `https://dnd5eapi.co/api/monsters/troll`,
             }
         }).then((data) => {
             app.displayEnemy(data);
@@ -212,7 +212,7 @@ app.getRandomMonster = () => {
             dataType: 'json',
             method: 'GET',
             data: {
-                reqUrl: `http://dnd5eapi.co/api/monsters/sahuagin`,
+                reqUrl: `https://dnd5eapi.co/api/monsters/sahuagin`,
             }
         }).then((data) => {
             app.displayEnemy(data);
@@ -232,7 +232,7 @@ app.getRandomMonster = () => {
             dataType: 'json',
             method: 'GET',
             data: {
-                reqUrl: `http://dnd5eapi.co/api/monsters/gelatinous-cube`,
+                reqUrl: `https://dnd5eapi.co/api/monsters/gelatinous-cube`,
             }
         }).then((data) => {
             app.displayEnemy(data);
