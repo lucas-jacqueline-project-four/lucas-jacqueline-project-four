@@ -130,6 +130,7 @@ myApp.displayEnemy = (monster) => {
 
 myApp.getRandomMonster = () => {
     const listOfRandomOpponents = ['goblin', 'owlbear', 'orc', 'troll', 'sahuagin', 'gelatinous cube'];
+    // const listOfRandomOpponents = [ 'sahuagin', 'gelatinous cube'];
     const random = Math.floor(Math.random() * listOfRandomOpponents.length);
     
     if (listOfRandomOpponents[random] === 'goblin') {
@@ -145,11 +146,14 @@ myApp.getRandomMonster = () => {
             // return data;
             myApp.displayEnemy(data);
             $('#enemy-img').attr('src', './assets/gobbo.png');
-            let enemyGoblinHP = 40;
-            $('#enemy-hp').append(`<p class="hp">HP: ${enemyGoblinHP}/40</p>`);
+            enemyHP = 40;
+            $('#enemy-hp').append(`<p class="hp">HP: ${enemyHP}/40</p>`);
             $('body').on('click', '#attack', function () {
-                let attackedHP = enemyGoblinHP - 5;
-                console.log(attackedHP);
+                enemyHP = enemyHP - 5;
+                $('#enemy-hp').replaceWith(`<p class="hp" id="enemy-hp">HP: ${enemyHP}/40`);
+                console.log(enemyHP);
+                console.log($('#enemy-hp'));
+                myApp.checkWinner();
             });
         });
         return enemyMonsterPromise;
@@ -166,11 +170,14 @@ myApp.getRandomMonster = () => {
             // return data;
             myApp.displayEnemy(data);
             $('#enemy-img').attr('src', './assets/Owlbear2.png');
-            let enemyOwlbearHP = 59;
-            $('#enemy-hp').append(`<p class="hp">HP: ${enemyOwlbearHP}/59</p>`);
+            enemyHP = 59;
+            $('#enemy-hp').append(`<p class="hp">HP: ${enemyHP}/59</p>`);
             $('body').on('click', '#attack', function () {
-                let attackedHP = enemyOwlbearHP - 5;
-                console.log(attackedHP);
+                enemyHP = enemyHP - 5;
+                $('#enemy-hp').replaceWith(`<p class="hp" id="enemy-hp">HP: ${enemyHP}/59`);
+                console.log(enemyHP);
+                console.log($('#enemy-hp'));
+                myApp.checkWinner();
             });
         });
         return enemyMonsterPromise;
@@ -190,11 +197,14 @@ myApp.getRandomMonster = () => {
             // return data;
             myApp.displayEnemy(data);
             $('#enemy-img').attr('src', './assets/orc.png');
-            let enemyOrcHP =  50;
-            $('#enemy-hp').append(`<p class="hp">HP: ${enemyOrcHP}/50</p>`); 
+            enemyHP =  50;
+            $('#enemy-hp').append(`<p class="hp">HP: ${enemyHP}/50</p>`); 
             $('body').on('click', '#attack', function(){ 
-                let attackedHP = enemyOrcHP - 5;
-                console.log(attackedHP);
+                enemyHP = enemyHP - 5;
+                $('#enemy-hp').replaceWith(`<p class="hp" id="enemy-hp">HP: ${enemyHP}/50`);
+                console.log(enemyHP);
+                console.log($('#enemy-hp'));
+                myApp.checkWinner();
             });
         });
         return enemyMonsterPromise;
@@ -211,11 +221,14 @@ myApp.getRandomMonster = () => {
             // return data;
             myApp.displayEnemy(data);
             $('#enemy-img').attr('src', './assets/O-Mad-Troll-Monster-620-Wide-with-margins.png');
-            let enemyTrollHP = 84;
-            $('#enemy-hp').append(`<p class="hp">HP: ${enemyTrollHP}/84</p>`);
+            enemyHP = 84;
+            $('#enemy-hp').append(`<p class="hp">HP: ${enemyHP}/84</p>`);
             $('body').on('click', '#attack', function () {
-                let attackedHP = enemyTrollHP - 5;
-                console.log(attackedHP);
+                enemyHP = enemyHP - 5;
+                $('#enemy-hp').replaceWith(`<p class="hp" id="enemy-hp">HP: ${enemyHP}/84`);
+                console.log(enemyHP);
+                console.log($('#enemy-hp'));
+                myApp.checkWinner();
             });
         });
         return enemyMonsterPromise;
@@ -232,11 +245,14 @@ myApp.getRandomMonster = () => {
             // return data;
             myApp.displayEnemy(data);
             $('#enemy-img').attr('src', './assets/fishman2.png');
-            let enemySahuaginHP = 60;
-            $('#enemy-hp').append(`<p class="hp">HP: ${enemySahuaginHP}/60</p>`);
+            enemyHP = 60;
+            $('#enemy-hp').append(`<p class="hp">HP: ${enemyHP}/60</p>`);
             $('body').on('click', '#attack', function () {
-                let attackedHP = enemySahuaginHP - 5;
-                console.log(attackedHP);
+                enemyHP = enemyHP - 5;
+                $('#enemy-hp').replaceWith(`<p class="hp" id="enemy-hp">HP: ${enemyHP}/60`);
+                console.log(enemyHP);
+                console.log($('#enemy-hp'));
+                myApp.checkWinner();
             });
         });
         return enemyMonsterPromise;
@@ -253,117 +269,138 @@ myApp.getRandomMonster = () => {
             // return data;
             myApp.displayEnemy(data);
             $('#enemy-img').attr('src', './assets/cube2.png');
-            let enemyGelatinousCubeHP = 84;
-            $('#enemy-hp').append(`<p class="hp">HP: ${enemyGelatinousCubeHP}/84</p>`);
+            enemyHP = 84;
+            $('#enemy-hp').append(`<p class="hp">HP: ${enemyHP}/84</p>`);
             $('body').on('click', '#attack', function () {
-                let attackedHP = enemyGelatinousCubeHP - 5;
-                console.log(attackedHP);
+                enemyHP = enemyHP - 5;
+                $('#enemy-hp').replaceWith(`<p class="hp" id="enemy-hp">HP: ${enemyHP}/84`);
+                console.log(enemyHP);
+                console.log($('#enemy-hp'));
+                myApp.checkWinner();
             });
         });
         return enemyMonsterPromise;
     }
 }
 
+let enemyHP = 0;
+let userHP = 0;
+
 myApp.init = () => {
-    $('body').on('click', '#owlbear', function() {
+   
+    $('body').one('click', '#owlbear', function(e) {
         myApp.getOwlbear();
         $('#monster-img').attr('src', './assets/Owlbear2.png');
-        let owlBearHP = 59;
-        $('#monster-hp').append(`<p class="hp">HP: ${owlBearHP}/59</p>`)
+        userHP = 59;
+        $('#monster-hp').append(`<p class="hp">HP: ${userHP}/59</p>`);
+        $('body').on('click', '#attack', function () {
+            userHP = userHP - 3;
+            $('#monster-hp').replaceWith(`<p class="hp" id="monster-hp">HP: ${userHP}/59</p>`);
+        });
     });
     $('body').on('click', '#goblin', function() {
         myApp.getGoblin();
         $('#monster-img').attr('src', './assets/gobbo.png');
-        let goblinHP = 40;
-        $('#monster-hp').append(`<p class="hp">HP: ${goblinHP}/40</p>`)
+        userHP = 40;
+        $('#monster-hp').append(`<p class="hp">HP: ${userHP}/40</p>`)
+        $('body').on('click', '#attack', function () {
+            userHP = userHP - 3;
+            $('#monster-hp').replaceWith(`<p class="hp" id="monster-hp">HP: ${userHP}/40</p>`)
+        });
     });
     $('body').on('click', '#orc', function() {
         myApp.getOrc();
         $('#monster-img').attr('src', './assets/orc.png');
-        let orcHP = 50;
-        $('#monster-hp').append(`<p class="hp">HP: ${orcHP}/50</p>`)
+        userHP = 50;
+        $('#monster-hp').append(`<p class="hp">HP: ${userHP}/50</p>`);
+        $('body').on('click', '#attack', function () {
+            userHP = userHP - 3;
+            $('#monster-hp').replaceWith(`<p class="hp" id="monster-hp">HP: ${userHP}/50</p>`);
+        });
     });
 
     $('body').on('click', '#sahuagin', function() {
         myApp.getSahuagin();
         $('#monster-img').attr('src', './assets/fishman2.png');
-        let sahuaginHP = 60;
-        $('#monster-hp').append(`<p class="hp">HP: ${sahuaginHP}/60</p>`)
+        userHP = 60;
+        $('#monster-hp').append(`<p class="hp">HP: ${userHP}/60</p>`)
+        $('body').on('click', '#attack', function () {
+            userHP = userHP - 3;
+            $('#monster-hp').replaceWith(`<p class="hp" id="monster-hp">HP: ${userHP}/60</p>`);
+        });
     });
 
     $('body').on('click', '#troll', function() {
         myApp.getTroll();
         $('#monster-img').attr('src', './assets/O-Mad-Troll-Monster-620-Wide-with-margins.png');
-        let trollHP = 84;
-        $('#monster-hp').append(`<p class="hp">HP: ${trollHP}/84</p>`)
+        userHP = 84;
+        $('#monster-hp').append(`<p class="hp">HP: ${userHP}/84</p>`);
+        $('body').on('click', '#attack', function () {
+            userHP = userHP - 3;
+            $('#monster-hp').replaceWith(`<p class="hp" id="monster-hp">HP: ${userHP}/84</p>`);
+        });
     });
 
     $('body').on('click', '#gelatinous-cube', function() {
         myApp.getGelatinousCube();
         $('#monster-img').attr('src', './assets/cube2.png');
-        let cubeHP = 84;
-        $('#monster-hp').append(`<p class="hp">HP: ${cubeHP}/84</p>`)
+        userHP = 84;
+        $('#monster-hp').append(`<p class="hp">HP: ${userHP}/84</p>`);
+        $('body').on('click', '#attack', function () {
+            userHP = userHP - 3;
+            $('#monster-hp').replaceWith(`<p class="hp" id="monster-hp">HP: ${userHP}/84</p>`);
+        });
+        
     });
 
     $('body').on('click', '.monster', function () {
         $('#attack-box').append('<button class="attack-button" id="attack">ATTACK!!!!</button>');
         myApp.getRandomMonster();
+        $('.monster').attr("disabled", true);
+        $('#gallery').hide();
     })
 
-    // $('body').on('click', '#attack', function(){
-        // const masterEnemyHP = [enemyTrollHP, enemySahuaginHP, enemyOwlbearHP, enemyOrcHP, enemyGelatinousCubeHP, enemyGoblinHP];
-        // console.log('Hello')
-        // masterenemyHP should be equal to a random number - current HP of random enemy
-        // how to gt current random enemy 
-        //get the current enemy's HP 
-        //return the value
-        // attackedOrcHP();
 
-        // When we click on a monster, a enemy image is randomly generated, as well as their corresponding stats, title and HP
-        // When we click on the Attack button, we want 5 to be subtracted from the enemy's generated HP
-        // Current problem: We want to apply an On Click to the attack button, but don't know how to get it to reach the enemy's HP, because it was generated and lives in a different function
+ 
+
+
+    // $('body').on('click', '#attack', function(){
+    //     userHP = userHP - 3;
+        
+        console.log(userHP)
     // })
+
 }
 
+myApp.checkWinner=function(){
+    if (userHP < 1 && enemyHP < 1) {
+        $('.body-container').replaceWith(`<section class='end-page'><h1>you tied</h1><p>Due to unfortunate circumstances, our two brave competitors have met with a grisly end. A sorry sight, our poor groundskeepers have a large mess to clean up.</p><a href=#><button id="try-again">try again</button></a></section>`);
+    } else if (userHP < 1) {
+        $('.body-container').replaceWith(`<section class='end-page'><h1>you lose</h1><p>A sad, sorry fate. At least your body will keep the Vultures happy!</p><a href=#><button id="try-again">try again</button></a></section>`);
+    } else if (enemyHP < 1) {
+        $('.body-container').replaceWith(`<section class='end-page'><h1>you win</h1><p>You live to see another day, but should you wish to tempt fate again, you know where to go!</p><a href=#><button id="try-again">try again</button></a></section>`);
+    }
 
+    $('#try-again').on('click', function(){
+        location.reload();
+    });
+};
 
 $(function() {
     myApp.init();
 });
+// If (UserHP === 0) -> page says "You Lose"
+// If (OpponentHP === 0) -> page says "You Win"
 
-//make a method, that checks the ID/Class of the random monster. based on that, append HP
-
-// User clicks Attack button
-
-// Strengths
-// Owlbear: 20 
-// Goblin: 8
-// Orc: 16
-// Fishman: 13
-// Troll: 18
-// Cube: 14
-
-// HP
-// Owlbear: 59
-// Goblin: 7 to balance , maybe set this 40
-// Orc: 15 possibly set to 50
-// Fishman: 22 possibly set to 60
-// Troll: 84
-// Cube: 84
-
-//instead of the stats ul, the HP can be an h3 placed beside the stats list. 
-//attack button will be placed at the center of the screen to attract user to click.
-
+//STRETCH GOALS
 // If Strength > 15, then take off 10HP from opponent
 // If Strength < 15, then take off 5HP from opponent 
 
 // If Opponent Strength > 15, then take off 10HP from User
 // If Opponent Strength < 15, then take off 5HP from User
 
-// If (UserHP === 0) -> page says "You Lose"
-// If (OpponentHP === 0) -> page says "You Win"
-
-//MVP for now, have the attacks of user and opponent happen at the same time
-
 //have a to-hit modifier. Attack === 0-1 = miss. attack === 2-9 = hit.
+
+
+
 
