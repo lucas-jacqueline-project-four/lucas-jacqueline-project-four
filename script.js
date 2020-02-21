@@ -128,7 +128,7 @@ app.getRandomMonster = () => {
     
     if (listOfRandomOpponents[random] === 'goblin') {
         const enemyMonsterPromise = $.ajax({
-            url: 'http://proxy.hackeryou.com',
+            url: 'https://proxy.hackeryou.com',
             dataType: 'json',
             method: 'GET',
             data: {
@@ -148,7 +148,7 @@ app.getRandomMonster = () => {
         return enemyMonsterPromise;
     } else if (listOfRandomOpponents[random] === 'owlbear') {
         const enemyMonsterPromise = $.ajax({
-            url: 'http://proxy.hackeryou.com',
+            url: 'https://proxy.hackeryou.com',
             dataType: 'json',
             method: 'GET',
             data: {
@@ -168,7 +168,7 @@ app.getRandomMonster = () => {
         return enemyMonsterPromise;
     } else if (listOfRandomOpponents[random] === 'orc') {
         const enemyMonsterPromise = $.ajax({
-            url: 'http://proxy.hackeryou.com',
+            url: 'https://proxy.hackeryou.com',
             dataType: 'json',
             method: 'GET',
             data: {
@@ -188,7 +188,7 @@ app.getRandomMonster = () => {
         return enemyMonsterPromise;
     } else if (listOfRandomOpponents[random] === 'troll') {
         const enemyMonsterPromise = $.ajax({
-            url: 'http://proxy.hackeryou.com',
+            url: 'https://proxy.hackeryou.com',
             dataType: 'json',
             method: 'GET',
             data: {
@@ -208,7 +208,7 @@ app.getRandomMonster = () => {
         return enemyMonsterPromise;
     } else if (listOfRandomOpponents[random] === 'sahuagin') {
         const enemyMonsterPromise = $.ajax({
-            url: 'http://proxy.hackeryou.com',
+            url: 'https://proxy.hackeryou.com',
             dataType: 'json',
             method: 'GET',
             data: {
@@ -228,7 +228,7 @@ app.getRandomMonster = () => {
         return enemyMonsterPromise;
     } else if (listOfRandomOpponents[random] === 'gelatinous cube') {
         const enemyMonsterPromise = $.ajax({
-            url: 'http://proxy.hackeryou.com',
+            url: 'https://proxy.hackeryou.com',
             dataType: 'json',
             method: 'GET',
             data: {
