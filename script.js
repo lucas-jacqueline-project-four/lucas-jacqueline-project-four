@@ -29,7 +29,7 @@ myApp.getGoblin = () => {
     }).then((data) => {
         console.log(data);
         // return data;
-        myApp.displayMonster();
+        myApp.displayMonster(data);
     });
     return monsterPromise
 }
