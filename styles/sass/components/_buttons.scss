@@ -11,4 +11,12 @@ a button {
     font-size: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+
+a button:hover, 
+.monster:hover{
+    transition: all 0.25s ease-in;
+    background: rgb(105, 11, 16);
 }

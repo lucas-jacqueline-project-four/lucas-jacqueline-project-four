@@ -338,6 +338,15 @@ a button {
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+a button:hover,
+.monster:hover {
+  -webkit-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+  background: #690b10;
 }
 
 .text-container {
@@ -542,5 +551,6 @@ li p {
 }
 
 .end-page p {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
+  text-align: center;
 }
