@@ -288,7 +288,7 @@ p {
 img {
   display: block;
   max-width: 100%;
-  max-height: 400px;
+  max-height: 350px;
 }
 
 .wrapper {
@@ -398,7 +398,7 @@ li p {
   border: 3px solid white;
   text-align: center;
   width: calc((100% / 3) - 20px);
-  height: 250px;
+  height: 225px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   cursor: pointer;
